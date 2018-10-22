@@ -53,34 +53,34 @@ Nous allons travailler dans l'environnement Anaconda. Il est installé sur les m
 
 ### Démarrer un terminal Anaconda Prompt
 
-![Démarrer](demarrer.png)
+![Démarrer](_images/demarrer.png)
 
 ### Lancer Visual Studio Code
 
 Dans ce terminal, la commande `code` permet de lancer l'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download). 
 
-![Lancer Visual Studio Code](anacondaprompt.png)
+![Lancer Visual Studio Code](_images/anacondaprompt.png)
 
 Il existe de nombreux autres éditeurs et vous pouvez bien sûr conserver vos habitudes de travail si vous en avez. Pour ceux qui n'en ont pas (encore), Visual Studio Code est un choix pertinent. C'est un éditeur léger, puissant et disposant d'un terminal intégré, ce qui permet de disposer d'un environnement de travail pratique et agréable à utiliser.
 
-![Visual Studio Code](vscode.png)
+![Visual Studio Code](_images/vscode.png)
 
 
 ### Ouvrir le répertoire de travail
 
 Ouvrir le dossier `EIG-2010` qui contient les ressources nécessaires pour ce cours. Au démarrage, ce répertoire est un clone du projet  https://git.esiee.fr/courivad/Python1. Il contiendra par la suite le travail réalisé dans le cadre de ce cours. Vous pouvez utiliser `git`, également intégré à Visual Studio Code, pour maintenir la synchronisation entre votre répertoire et le repo distant.
 
-![Ouvrir le répertoire de travail](openfolder.png)
+![Ouvrir le répertoire de travail](_images/openfolder.png)
 
 ### Le terminal intégré
 
 Visual Studio Code dispose d'un terminal intégré, que l'on fait apparaître ou disparaître dans le menu Afficher.
 
-![Ouvrir le répertoire de travail](afficher-terminal.png)
+![Ouvrir le répertoire de travail](_images/afficher-terminal.png)
 
 Ce terminal fonctionne de la même manière que le terminal standard de Windows et toutes les commandes Windows sont disponibles en ligne de commande. Il diffère cependant du terminal natif en ce sens que les variables d'environnement ont été initialisées pour permettre l'utilisation de l'environnement Anaconda.
 
-![Terminal intégré](terminal.png)
+![Terminal intégré](_images/terminal.png)
 
 Ce terminal intégré permet :
 
@@ -89,7 +89,7 @@ Ce terminal intégré permet :
   
 Une erreur courante est d'entrer des commandes Python dans un terminal Windows ou des commandes Windows dans un interpréteur Python.
 
-![Python](python.png)
+![Python](_images/python.png)
 
 ## Synchroniser son travail avec le repo distant
 
