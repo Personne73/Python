@@ -1,4 +1,4 @@
-Ce projet contient les ressources nécessaires pour suivre le cours Python1 et faire les exercices associés.
+Ce projet contient les ressources nécessaires pour suivre [le cours Python1](https://perso.esiee.fr/~courivad/Python1/index.html) et faire les exercices associés.
 
 # Le contexte général
 Pour faciliter le développement du code informatique, il est important (entre autres) de disposer :
@@ -111,10 +111,11 @@ L'agenda est donné ici à titre indicatif et le découpage peut parfois être u
 - [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/Python1/03-controle.html)
 
 ## Semaine 45 (4:00)
+- [Fonctions et modules](https://perso.esiee.fr/~courivad/Python1/04-fonctions.html)
 - [Les chaines de caractères](https://perso.esiee.fr/~courivad/Python1/05-chaines.html)
-- [Les listes](https://perso.esiee.fr/~courivad/Python1/06-listes.html)
 
 ## Semaine 46 (4:00)
+- [Les listes](https://perso.esiee.fr/~courivad/Python1/06-listes.html)
 - [Les tuples](https://perso.esiee.fr/~courivad/Python1/07-tuples.html)
 - [Les sets](https://perso.esiee.fr/~courivad/Python1/08-sets.html)
 
