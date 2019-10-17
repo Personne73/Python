@@ -26,28 +26,28 @@ Une fois connecté à [la plateforme GitLab](https://git.esiee.fr/), rechercher 
 
 Sur une machine locale, on clone le projet à partir du repo distant avant de poursuivre le travail de développement. Cloner un projet c'est créer un répertoire local contenant les fichiers du repo distant. 
 
-- lancez la commande `Git Bash`, qui ouvre un terminal configuré pour fonctionner avec `git`
-- placez vous sur votre disque U: : `cd /u`
-- clonez le projet : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python1 EIG-2010`
+- sous Windows, lancez la commande `Git Bash`, qui ouvre un terminal configuré pour fonctionner avec `git`. Sous Linux, le terminal standard est configuré pour fonctionner directement avec `git`.
+- placez vous dans votre répertoire réseau. Sous Windows, il s'agit du disque U: : `cd /u`
+- clonez le projet : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python1`
   
 Tout au long du cours vous pouvez être amenés à utiliser plusieurs machines de développement (des machines différentes dans les salles de l’ESIEE, votre machine personnelle, etc...). Si vous maintenez la synchronisation entre repo distant et repo local, vous pourrez à tout moment cloner le projet (à jour) sur une ou plusieurs machines locales. utilisée.
 
 ## Les ressources
 
-Le dossier `EIG-2010` cloné à l'étape précédente, contient l'ensemble des ressources nécessaires pour suivre ce cours.
+Le dossier `Python1` cloné à l'étape précédente, contient l'ensemble des ressources nécessaires pour suivre ce cours.
 
 * Le dossier `Data` contient les données utilisées pour les exemples du cours et celles nécessaires pour faire certains exercices.
 * Le dossier `Exercices` contient des squelettes de fichier pour faire certains exercices. En deux versions:
     * la version "normale" ne contient que la signature des fonctions et les doctests associés
     * la version "easy" contient des informations supplémentaires sur la structuration du problème
 
-Le découpage en séances est donné ci dessous dans la section [Agenda](#agenda)
+Le découpage en séances est donné ci dessous à titre indicatif dans la section [Agenda](#agenda)
 
 # Méthodologie de développement
 
 ## Coder
 
-Le travail de développement se fait sur une machine locale (dans le répertoire `EIG-2010` créé lors de l'opération de clonage) avec un terminal (Anaconda Prompt) et un éditeur de texte ([Visual Studio Code](https://code.visualstudio.com/download)).
+Le travail de développement se fait sur une machine locale (dans le répertoire `Python1` créé lors de l'opération de clonage) avec un terminal (Anaconda Prompt) et un éditeur de texte ([Visual Studio Code](https://code.visualstudio.com/download)).
 
 Nous allons travailler dans l'environnement Anaconda. Il est installé sur les machines Windows de l'ESIEE et disponible au téléchargement [ici](https://www.anaconda.com/download/) pour vos machines personnelles.
 
@@ -61,14 +61,9 @@ Dans ce terminal, la commande `code` permet de lancer l'éditeur de texte [Visua
 
 ![Lancer Visual Studio Code](_images/anacondaprompt.png)
 
-Il existe de nombreux autres éditeurs et vous pouvez bien sûr conserver vos habitudes de travail si vous en avez. Pour ceux qui n'en ont pas (encore), Visual Studio Code est un choix pertinent. C'est un éditeur léger, puissant et disposant d'un terminal intégré, ce qui permet de disposer d'un environnement de travail pratique et agréable à utiliser.
-
-![Visual Studio Code](_images/vscode.png)
-
-
 ### Ouvrir le répertoire de travail
 
-Ouvrir le dossier `EIG-2010` qui contient les ressources nécessaires pour ce cours. Au démarrage, ce répertoire est un clone du projet  https://git.esiee.fr/courivad/Python1. Il contiendra par la suite le travail réalisé dans le cadre de ce cours. Vous pouvez utiliser `git`, également intégré à Visual Studio Code, pour maintenir la synchronisation entre votre répertoire et le repo distant.
+Ouvrir le dossier `Python1` qui contient les ressources nécessaires pour ce cours avec la commande `Open Folder...`. Au démarrage, ce répertoire est un clone du projet  https://git.esiee.fr/courivad/Python1. Il contiendra par la suite le travail réalisé dans le cadre de ce cours. Vous pouvez utiliser `git`, également intégré à Visual Studio Code, pour maintenir la synchronisation entre votre répertoire et le repo distant.
 
 ![Ouvrir le répertoire de travail](_images/openfolder.png)
 
@@ -78,7 +73,7 @@ Visual Studio Code dispose d'un terminal intégré, que l'on fait apparaître ou
 
 ![Ouvrir le répertoire de travail](_images/afficher-terminal.png)
 
-Ce terminal fonctionne de la même manière que le terminal standard de Windows et toutes les commandes Windows sont disponibles en ligne de commande. Il diffère cependant du terminal natif en ce sens que les variables d'environnement ont été initialisées pour permettre l'utilisation de l'environnement Anaconda.
+Ce terminal fonctionne de la même manière que le terminal ouvert par la commande `Anaconda Prompt`. Toutes les commandes Windows sont disponibles. Toutes les variables d'environnement ont été initialisées pour permettre l'utilisation de l'environnement Anaconda.
 
 ![Terminal intégré](_images/terminal.png)
 
@@ -87,7 +82,7 @@ Ce terminal intégré permet :
 - d'exécuter les programmes Python avec la syntaxe `python nom_du_programme.py` 
 - et de lancer l'interpréteur interactif avec la syntaxe `python` . Le prompt (l'invite de commande) de ce dernier est différent (`>>>`) et permet d'identifier la nature des commandes attendues. 
   
-Une erreur courante est d'entrer des commandes Python dans un terminal Windows ou des commandes Windows dans un interpréteur Python.
+Une erreur courante est d'entrer des commandes Python dans un terminal Windows ou l'inverse, des commandes Windows dans un interpréteur Python.
 
 ![Python](_images/python.png)
 
