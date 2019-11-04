@@ -1,4 +1,4 @@
-Ce projet contient les ressources nécessaires pour suivre [le cours Python1](https://perso.esiee.fr/~courivad/Python1/index.html) et faire les exercices associés.
+Ce projet contient les ressources nécessaires pour suivre [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html) et faire les exercices associés.
 
 # Le contexte général
 Pour faciliter le développement du code informatique, il est important (entre autres) de disposer :
@@ -16,11 +16,11 @@ Les machines de l'ESIEE disposent du système [git](https://fr.wikipedia.org/wik
 
 # Obtenir les ressources
 
-Ce dépôt (https://git.esiee.fr/courivad/Python1) contient des informations générales sur la méthodologie de développement ainsi que les fichiers nécessaires pour le cours (les exemples utilisés et le squelette des exercices d’application).
+Ce dépôt (https://git.esiee.fr/courivad/Python) contient des informations générales sur la méthodologie de développement ainsi que les fichiers nécessaires pour le cours (les exemples utilisés et le squelette des exercices d’application).
 
 ## Forker le projet initial
 
-Une fois connecté à [la plateforme GitLab](https://git.esiee.fr/), rechercher le projet https://git.esiee.fr/courivad/Python1 et le forker. Un fork est une copie complète du projet dans votre espace personnel sur [la plateforme GitLab](https://git.esiee.fr/). Par la suite, cette copie sera appelée "repo distant".  Vous pourrez ultérieurement ajouter, supprimer ou modifier du contenu.
+Une fois connecté [au Git ESIEE](https://git.esiee.fr/), rechercher le projet https://git.esiee.fr/courivad/Python et le forker. Un fork est une copie complète du projet dans votre espace personnel. Par la suite, cette copie sera appelée "repo distant".  Vous pourrez ultérieurement ajouter, supprimer ou modifier du contenu.
 
 ## Cloner le projet sur une machine locale
 
@@ -28,13 +28,13 @@ Sur une machine locale, on clone le projet à partir du repo distant avant de po
 
 - sous Windows, lancez la commande `Git Bash`, qui ouvre un terminal configuré pour fonctionner avec `git`. Sous Linux, le terminal standard est configuré pour fonctionner directement avec `git`.
 - placez vous dans votre répertoire réseau. Sous Windows, il s'agit du disque U: : `cd /u`
-- clonez le projet : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python1`
+- clonez le projet : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python`
   
 Tout au long du cours vous pouvez être amenés à utiliser plusieurs machines de développement (des machines différentes dans les salles de l’ESIEE, votre machine personnelle, etc...). Si vous maintenez la synchronisation entre repo distant et repo local, vous pourrez à tout moment cloner le projet (à jour) sur une ou plusieurs machines locales. utilisée.
 
 ## Les ressources
 
-Le dossier `Python1` cloné à l'étape précédente, contient l'ensemble des ressources nécessaires pour suivre ce cours.
+Le dossier `Python` cloné à l'étape précédente, contient l'ensemble des ressources nécessaires pour suivre ce cours.
 
 * Le dossier `Data` contient les données utilisées pour les exemples du cours et celles nécessaires pour faire certains exercices.
 * Le dossier `Exercices` contient des squelettes de fichier pour faire certains exercices. En deux versions:
@@ -47,7 +47,7 @@ Le découpage en séances est donné ci dessous à titre indicatif dans la secti
 
 ## Coder
 
-Le travail de développement se fait sur une machine locale (dans le répertoire `Python1` créé lors de l'opération de clonage) avec un terminal (Anaconda Prompt) et un éditeur de texte ([Visual Studio Code](https://code.visualstudio.com/download)).
+Le travail de développement se fait sur une machine locale (dans le répertoire `Python` créé lors de l'opération de clonage) avec un terminal (Anaconda Prompt) et un éditeur de texte ([Visual Studio Code](https://code.visualstudio.com/download)).
 
 Nous allons travailler dans l'environnement Anaconda. Il est installé sur les machines Windows de l'ESIEE et disponible au téléchargement [ici](https://www.anaconda.com/download/) pour vos machines personnelles.
 
@@ -63,7 +63,7 @@ Dans ce terminal, la commande `code` permet de lancer l'éditeur de texte [Visua
 
 ### Ouvrir le répertoire de travail
 
-Ouvrir le dossier `Python1` qui contient les ressources nécessaires pour ce cours avec la commande `Open Folder...`. Au démarrage, ce répertoire est un clone du projet  https://git.esiee.fr/courivad/Python1. Il contiendra par la suite le travail réalisé dans le cadre de ce cours. Vous pouvez utiliser `git`, également intégré à Visual Studio Code, pour maintenir la synchronisation entre votre répertoire et le repo distant.
+Ouvrir le dossier `Python` qui contient les ressources nécessaires pour ce cours avec la commande `Open Folder...`. Au démarrage, ce répertoire est un clone du projet  https://git.esiee.fr/courivad/Python. Il contiendra par la suite le travail réalisé dans le cadre de ce cours. Vous pouvez utiliser `git`, également intégré à Visual Studio Code, pour maintenir la synchronisation entre votre répertoire et le repo distant.
 
 ![Ouvrir le répertoire de travail](_images/openfolder.png)
 
