@@ -164,8 +164,8 @@ A chaque modification de `extract_temp()`, tester son fonctionnement dans la fon
 
 Une fois la fonction `extract_temp()` opérationnelle pour un argument, ET SEULEMENT DANS CE CAS, lancer les doctests :
 
-- Windows : `python -m doctest ex07.py -v`
-- Linux : `python3 -m doctest ex07.py -v`
+- Windows : `python -m doctest ex09.py -v`
+- Linux : `python3 -m doctest ex09.py -v`
 
 Quelques indications:
 
@@ -175,7 +175,121 @@ Quelques indications:
 - cette séquence de bytes est convertie en `str` avec la méthode `decode()`.
 
 ---
-*Note* : La liste ne permet pas une performance algorithmique optimale. La structure de données la plus appropriée à ce type de problème est le dictionnaire que nous verrons au chapitre suivant.
+Note : 
+
+La liste ne permet pas une performance algorithmique optimale. La structure de données la plus appropriée à ce type de problème est le dictionnaire que nous verrons au chapitre suivant.
 ---
+
+# Les dictionnaires
+
+L'exercice d'application ci dessous correspond au chapitre [Les dictionnaires](https://perso.esiee.fr/~courivad/Python/10-dict.html).
+
+Le fichier `../Data/stations-meteo.csv` contient la liste des stations d’observation de Météo France et un certain nombre d’informations s’y rapportant. Ecrire la fonction `build_stations_dict()` prenant en argument le fichier `csv` précédent et retournant un dictionnaire dont la clé est le nom de la station et la valeur un `namedtuple()` contenant l’ID, la latitude, la longitude et l’altitude de la station. Les tuples nommés ont été présentés au chapitre [Les tuples](https://perso.esiee.fr/~courivad/Python/07-tuples.html).
+
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex10.py`. En cas de difficulté, le fichier `ex10-easy.py` contient des renseignements supplémentaires. 
+
+Vous devez écrire le code de la fonction `build_stations_dict()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte.
+
+A chaque modification de `build_stations_dict()`, tester son fonctionnement dans la fonction `main()` en l''appelant avec un argument particulier et en affichant la valeur de retour.
+
+Lancement des tests:
+
+- Windows : `python -m doctest ex10.py -v`
+- Linux : `python3 -m doctest ex10.py -v`
+
+# Les exceptions
+
+L'exercice d'application ci dessous correspond au chapitre [Les exceptions](https://perso.esiee.fr/~courivad/Python/11-exceptions.html).
+
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex11.py`. En cas de difficulté, le fichier `ex11-easy.py` contient des renseignements supplémentaires.
+
+Vous devez mettre en oeuvre le paradigme EAFP pour écrire une fonction `parse()` qui prend en entrée une chaine de caractère et retourne un nombre décimal, un entier ou une chaine de caractère selon son contenu.
+
+Lancement des tests:
+
+- Windows : `python -m doctest ex11.py -v`
+- Linux : `python3 -m doctest ex11.py -v`
+
+# Les classes
+
+Les exercices d'application ci dessous correspondent au chapitre [Les classes](https://perso.esiee.fr/~courivad/Python/12-classes.html).
+
+## La classe `Point2D`
+
+Créer une classe `Point2D` possédant 2 attributs `x` et `y` (représentant les coordonnées du point dans un espace à 2 dimensions) possédant les caractéristiques suivantes:
+
+- un constructeur avec des paramètres par défaut permettant de créer un point de coordonnées `(0,0)` si aucun paramètre ne lui est passé.
+- une méthode `move()` avec 2 arguments `dx` et `dy` permettant de déplacer le point de telle sorte que ses nouvelles coordonnées soient `(x+dx, y+dy)`. Cette méthode ne retourne rien (`None`)
+- une méthode `distance()` prenant en argument un autre `Point2D` et retournant la distance euclidienne entre le point courant et celui passé en argument. Pour un code optimal, faites appel à la fonction `math.hypot()`.
+
+Redéfinir la méthode `__str__()` pour un affichage pertinent lors de l’appel à `print()`.
+
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex12.py`. En cas de difficulté, le fichier `ex12-easy.py` contient des renseignements supplémentaires. 
+
+A chaque modification de la classe `Point2D`, tester son fonctionnement dans la fonction `main()` en créant une instance particulière et en vérifiant sur cette instance le bon fonctionnement des méthodes.
+
+Lancement des tests:
+
+- Windows : `python -m doctest ex12.py -v`
+- Linux : `python3 -m doctest ex12.py -v`
+
+## La classe `Vector2D`
+
+Créer une classe `Vector2D` possédant 2 attributs `x` et `y` qui représentent les coordonnées du vecteur dans un espace à 2 dimensions. Les arguments du constructeur naturel sont deux points de la classe `Point2D`:
+
+- redéfinir la méthode `__abs__()` pour retourner la norme du vecteur
+- redéfinir la méthode `__str__()` pour un affichage pertinent lors de l’appel à print().
+- redéfinir la méthode `__eq__()` afin que l’opérateur d’égalité `==` puisse fonctionner entre deux vecteurs.
+- redéfinir la méthode `__neg__()` afin que l’opération `-v` retourne l’opposé du vecteur `v`.
+- redéfinir la méthode `__add__()` afin que l’opérateur d’addition `+` de deux vecteurs puisse fonctionner.
+- redéfinir la méthode `__sub__()` afin que l’opérateur de soustraction `-` puisse fonctionner.
+
+Une fois la classe Vector2D opérationnelle pour une instance, vérifier la bonne exécution des doctests.
+
+- Windows : `python -m doctest ex12.py -v`
+- Linux : `python3 -m doctest ex12.py -v`
+
+# Internet
+
+L'exercice d'application ci dessous correspond au chapitre [Internet](https://perso.esiee.fr/~courivad/Python/13-internet.html).
+
+[IMDb](http://www.imdb.com/chart/top?ref_=nv_ch_250_4) recense la liste des 250 meilleurs films selon les votes de ses adhérents. Utilisez les modules `urllib.request` et `parser` pour récupérer automatiquement cette liste sur le serveur et l’afficher dans l’ordre inverse. Cette liste évolue au fil du temps mais le résultat devrait être proche de ceci:
+
+- 250 : In the Mood for Love
+- 249 : La douceur de vivre
+- 248 : Gangs of Wasseypur
+- 247 : L'ultime razzia
+- 246 : Lagaan
+- ...
+- 5 : 12 hommes en colère
+- 4 : The Dark Knight: Le chevalier noir
+- 3 : Le parrain, 2ème partie
+- 2 : Le parrain
+- 1 : Les évadés
+
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex13.py`. En cas de difficulté, le fichier `ex13-easy.py` contient des renseignements supplémentaires. 
+
+Vous devez écrire le code de la classe `MyHTMLParser` (attributs et méthodes) en redéfinissant les méthodes `handle_starttag()`, `handle_endtag()` et `handle_data()` pour mettre en oeuvre une logique de traitement (liée à la structure de la page HTML), qui déclenchera l’ajout de données à un conteneur seulement sur certaines conditions. Le conteneur et les conditions seront des attributs de la classe `MyHTMLParser` (qui hérite de `HTMLParser`).
+
+Ecrire le code de la fonction `scrap_imdb()` qui a pour rôle d’instancier la classe `MyHTMLParser` et d’appeler la méthode `feed()` sur celle ci.
+
+Ecrire le code de la fonction `main()` qui a pour rôle d’appeler la fonction `scrap_imdb()` sur une ressource distante (IMDb). Vous mettrez en oeuvre le traitement d’exception pour traiter élégamment l’éventualité d’une ressource réseau indisponible.
+
+Une fois la fonction main() opérationnelle, lancer les doctests. Le fichier `Data/IMDb.html` doit être présent dans le répertoire.
+
+- Windows : `python -m doctest ex13.py -v`
+- Linux : `python3 -m doctest ex13.py -v`
+
+# Géolocalisation
+
+L'exercice d'application ci dessous correspond au chapitre [Géolocatisation](https://perso.esiee.fr/~courivad/Python/15-geo.html).
+
+La population totale de la commune est une donnée importante mais elle ne reflète pas complètement l’urbanisation du territoire. La densité de population serait une grandeur plus intéressante dans ce cas. La surface de chacune des communes est une donnée manquante. Il faut soit la rechercher dans une source de données différente, ou la calculer à partir des coordonnées du polygone correspondant. Evaluer rapidement la complexité des deux approches. Mettre en oeuvre celle qui vous semble la plus simple.
+
+Les communes sont identifiées par leur code INSEE et leur nom. L’exemple ci dessus utilise le code INSEE. Ecrire le code permettant d’effectuer l’opération avec le nom de la commune. Vérifier la validité du processus en comparant la carte obtenue à celle donnée ci dessus. Y a t-il des données manquantes ? Le cas échéant, à quoi est ce dû ? Pouvez vous proposer une solution satisfaisante ?
+
+
+
+
 
 
