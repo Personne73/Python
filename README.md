@@ -9,8 +9,6 @@ Pour faciliter le développement du code informatique, il est important (entre a
 
 Dans le cadre de ce cours nous utiliserons le système [git](https://fr.wikipedia.org/wiki/Git). Pour une présentation (un peu) approfondie, on peut utiliser [le tutoriel OpenClassrooms](https://openclassrooms.com/fr/courses/1233741-gerez-vos-codes-source-avec-git).
 
-## Le contexte ESIEE
-
 L'ESIEE a déployé un serveur GitLab et vous disposez d'un compte sur la plateforme https://git.esiee.fr/. La connexion se fait avec vos identifiants habituels.
 
 Les machines de l'ESIEE (Windows et Linux) disposent du système [git](https://fr.wikipedia.org/wiki/Git).
@@ -48,14 +46,14 @@ Sur une machine locale, on clone le projet à partir du repo distant avant de po
 Lancez la commande `Git Bash`, qui ouvre un terminal configuré pour fonctionner avec `git`.
  
 - placez vous dans votre répertoire de travail. Sur une machine de l'ESIEE, placez vous dans votre espace réseau (disque U:) : `cd /u`
-- clonez le projet : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python`
+- clonez votre repo distant : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python`
 
 ### Linux
 
 Le terminal standard est configuré pour fonctionner directement avec `git`.
 
 - placez vous dans votre répertoire de travail. Sur une machine de l'ESIEE, vous vous trouvez automatiquement dans votre espace réseau
-- clonez le projet : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python`
+- clonez votre repo distant : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python`
 
 
 
@@ -87,6 +85,9 @@ Dans ce terminal, l'interpréteur Python 3.7 se lance avec la commande `python`:
     
 L'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download) est démarré depuis le terminal Anaconda avec la commande `code`.
 
+    $ code
+    $
+
 ### Linux
 
 Le terminal classique convient. L'interpréteur Python 3.7 se lance avec la commande `python3`:
@@ -107,7 +108,7 @@ Quel que soit l'OS choisi (Windows ou Linux), Le travail peut s'effectuer entiè
 
 ### Ouvrir le répertoire de travail
 
-Ouvrir le dossier `Python` qui contient les ressources nécessaires pour ce cours avec la commande `Open Folder...`. Au démarrage, ce répertoire est un clone du projet https://git.esiee.fr/<YOUR_GIT_NAME>/Python. Il contiendra par la suite le travail réalisé dans le cadre de ce cours. 
+Ouvrir le dossier `Python` qui contient les ressources nécessaires pour ce cours avec la commande `Open Folder...`. Au démarrage, ce répertoire est un clone de votre repo distant (https://git.esiee.fr/<YOUR_GIT_NAME>/Python). Il contiendra par la suite le travail réalisé dans le cadre de ce cours. 
 
 Vous pouvez utiliser `git`, depuis le terminal ou depuis Visual Studio Code, pour maintenir la synchronisation entre votre répertoire local et votre repo distant.
 
@@ -126,7 +127,7 @@ Ce terminal est une vue intégrée du terminal Linux ou Windows (`Anaconda Promp
 Ce terminal intégré permet :
 
 - d'exécuter les programmes Python avec la syntaxe `python nom_du_programme.py` (Windows) ou `python3 nom_du_programme.py` (Linux).
-- ou de lancer l'interpréteur interactif avec la syntaxe `python` (Windows) ou `python3` (Linux) . Le prompt (l'invite de commande) de ce dernier est différent (`>>>`) et permet d'identifier la nature des commandes attendues. 
+- de lancer l'interpréteur interactif avec la syntaxe `python` (Windows) ou `python3` (Linux) . Le prompt (l'invite de commande) de ce dernier est différent (`>>>`) et permet d'identifier la nature des commandes attendues. 
   
 Une erreur courante est d'entrer des commandes Python dans un terminal (Windows ou Linux) ou l'inverse, des commandes Windows ou Linux dans un interpréteur Python.
 
