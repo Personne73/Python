@@ -1,6 +1,7 @@
 Ce projet contient les ressources nécessaires pour suivre [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html) et faire les exercices associés.
 
 # Le contexte général
+
 Pour faciliter le développement du code informatique, il est important (entre autres) de disposer :
 
 - d’un endroit centralisé hébergeant le travail déjà réalisé
@@ -12,25 +13,51 @@ Dans le cadre de ce cours nous utiliserons le système [git](https://fr.wikipedi
 
 L'ESIEE a déployé un serveur GitLab et vous disposez d'un compte sur la plateforme https://git.esiee.fr/. La connexion se fait avec vos identifiants habituels.
 
-Les machines de l'ESIEE disposent du système [git](https://fr.wikipedia.org/wiki/Git). On travaillera dans l'environnement Windows.
+Les machines de l'ESIEE disposent du système [git](https://fr.wikipedia.org/wiki/Git).
 
 # Obtenir les ressources
 
-Ce dépôt (https://git.esiee.fr/courivad/Python) contient des informations générales sur la méthodologie de développement ainsi que les fichiers nécessaires pour le cours (les exemples utilisés et le squelette des exercices d’application).
+Pour suivre pleinement [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), des ressources nécessaires sont requises. Il s'agit des données utilisées pour les exemples et les exercices, ainsi que le squelette des exercices d’application.
+
+Ces ressources sont disponibles sur ce dépôt (https://git.esiee.fr/courivad/Python). Il contient également des informations générales sur la méthodologie de développement.
 
 ## Forker le projet initial
 
-Une fois connecté [au Git ESIEE](https://git.esiee.fr/), rechercher le projet https://git.esiee.fr/courivad/Python et le forker. Un fork est une copie complète du projet dans votre espace personnel. Par la suite, cette copie sera appelée "repo distant".  Vous pourrez ultérieurement ajouter, supprimer ou modifier du contenu.
+Le dépôt (https://git.esiee.fr/courivad/Python) ne vous appartient pas, ce qui signifie que vous avez uniquement les droits en lecture. Vous pouvez donc uniquement le copier. C'est suffisant pour une utilisation minimale.
+
+Vous pouvez également souhaiter avoir une utilisation plus avancée et disposer de votre propre dépôt distant (avec les droits d'écriture). Vous pourrez ainsi synchroniser votre travail local avec votre propre dépôt distant et disposer ainsi dans le cloud d'une version "à jour" de votre travail. A condition bien évidemment d'effectuer les opérations de synchronisation nécessaires (ce n'est pas automatique)
+
+Le processus de copie d'un dépôt distant dans votre espace personnel distant s'appelle un "fork". Un fork est une copie complète du projet. Par la suite, cette copie sera appelée "repo distant". Vous pourrez ultérieurement ajouter, supprimer ou modifier du contenu de ce repo distant:
+
+- connectez vous [au Git ESIEE](https://git.esiee.fr/) avec vos identifiants personnels
+- rechercher le projet https://git.esiee.fr/courivad/Python
+- le forker (vous trouverez la commande quelque part sur la page du projet)
+
+Une fois cette étape effectuée, vous dsposez de la totalité des ressources nécessaires dans votre espace Git personnel.
 
 ## Cloner le projet sur une machine locale
 
-Sur une machine locale, on clone le projet à partir du repo distant avant de poursuivre le travail de développement. Cloner un projet c'est créer un répertoire local contenant les fichiers du repo distant. 
+Le travail de développement s'effectue sur une machine locale (votre machine personnelle ou une machine de l'ESIEE). Il faut donc copier le repo distant sur la machine de développement. C'est le processus de clonage.
 
-- sous Windows, lancez la commande `Git Bash`, qui ouvre un terminal configuré pour fonctionner avec `git`. Sous Linux, le terminal standard est configuré pour fonctionner directement avec `git`.
-- placez vous dans votre répertoire réseau. Sous Windows, il s'agit du disque U: : `cd /u`
+
+Sur une machine locale, on clone le projet à partir du repo distant avant de poursuivre le travail de développement. Cloner un projet c'est créer un répertoire local contenant la totalité des fichiers du repo distant. 
+
+
+### Windows
+
+Lancez la commande `Git Bash`, qui ouvre un terminal configuré pour fonctionner avec `git`.
+ 
+- placez vous dans votre répertoire de travail. Sur une machine de l'ESIEE, placez vous dans votre espace réseau (disque U:) : `cd /u`
 - clonez le projet : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python`
-  
-Tout au long du cours vous pouvez être amenés à utiliser plusieurs machines de développement (des machines différentes dans les salles de l’ESIEE, votre machine personnelle, etc...). Si vous maintenez la synchronisation entre repo distant et repo local, vous pourrez à tout moment cloner le projet (à jour) sur une ou plusieurs machines locales. utilisée.
+
+### Linux
+
+Le terminal standard est configuré pour fonctionner directement avec `git`.
+
+- placez vous dans votre répertoire de travail. Sur une machine de l'ESIEE, vous vous trouvez automatiquement dans votre espace réseau
+- clonez le projet : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python`
+
+
 
 ## Les ressources
 
@@ -41,7 +68,6 @@ Le dossier `Python` cloné à l'étape précédente, contient l'ensemble des res
     * la version "normale" ne contient que la signature des fonctions et les doctests associés
     * la version "easy" contient des informations supplémentaires sur la structuration du problème
 
-Le découpage en séances est donné ci dessous à titre indicatif dans la section [Agenda](#agenda)
 
 # Méthodologie de développement
 
@@ -49,7 +75,9 @@ Le découpage en séances est donné ci dessous à titre indicatif dans la secti
 
 Le travail de développement se fait sur une machine locale (dans le répertoire `Python` créé lors de l'opération de clonage) avec un terminal (Anaconda Prompt) et un éditeur de texte ([Visual Studio Code](https://code.visualstudio.com/download)).
 
-Nous allons travailler dans l'environnement Anaconda. Il est installé sur les machines Windows de l'ESIEE et disponible au téléchargement [ici](https://www.anaconda.com/download/) pour vos machines personnelles.
+### Windows
+
+Nous travaillons dans l'environnement Anaconda. Il est installé sur les machines Windows de l'ESIEE et disponible au téléchargement [ici](https://www.anaconda.com/download/) pour vos machines personnelles.
 
 ### Démarrer un terminal Anaconda Prompt
 
@@ -88,10 +116,17 @@ Une erreur courante est d'entrer des commandes Python dans un terminal Windows o
 
 ## Synchroniser son travail avec le repo distant
 
-Il est utile de garder synchronisés le répertoire local et le repo distant. 
+Tout au long du cours vous pouvez être amenés à utiliser plusieurs machines de développement (des machines différentes dans les salles de l’ESIEE, votre machine personnelle, etc...). Si vous maintenez la synchronisation entre repo distant et repo local, vous pourrez disposer à tout moment de la dernière version de votre travail.
 
-- au début de chaque nouvelle séance, on récupére les modifications depuis le repo distant : `git pull`
-- à la fin de chaque nouvelle séance
-    - on ajoute les fichiers du répertoire à l'index : `git add .`
-    - on enregistre les modifications dans le repo local : `git commit -m "Travail effectué lors de la première séance"`. L'idée générale est de faire un commit à chaque étape logique du travail. Par exemple à la fin de chaque séance de TP...
-    - on pousse les modifications de la machine locale vers le repo distant : `git push origin master`
+### Au début de la séance
+
+Au début de chaque nouvelle séance, on récupére les modifications depuis le repo distant : `git pull`
+
+### A la fin de la séance
+
+A la fin de chaque nouvelle séance:
+
+- on ajoute les fichiers du répertoire à l'index : `git add .`
+- on enregistre les modifications dans le repo local : `git commit -m "Travail effectué lors de la première séance"`. L'idée générale est de faire un commit à chaque étape logique du travail. Par exemple à la fin de chaque séance de TP...
+- on pousse les modifications de la machine locale vers le repo distant : `git push origin master`
+
