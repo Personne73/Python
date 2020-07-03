@@ -1,7 +1,7 @@
 Vous trouverez ici les exercices d'application permettant de valider les connaissances du [cours Python](https://perso.esiee.fr/~courivad/Python)
 
 
-# 3. Contrôle de l'exécution d'un programme
+# 3 - Contrôle de l'exécution d'un programme
 
 L'exercice d'application ci dessous correspond au chapitre [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/Python/03-controle.html).
 
@@ -36,7 +36,7 @@ Ecrivez le code permettant de rechercher:
 - le temps de vol en altitude d’une suite de Syracuse et la valeur maximum du temps de vol des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
 - le temps de vol en altitude d’une suite de Syracuse et la valeur maximum du temps de vol en altitude des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
 
-# Fonctions et modules
+# 4 - Fonctions et modules
 
 L'exercice d'application ci dessous correspond au chapitre [Fonctions et modules](https://perso.esiee.fr/~courivad/Python/04-fonctions.html).
 
@@ -54,7 +54,7 @@ Utiliser la fonction `est_premier()` pour rechercher:
 - le premier nombre premier de Germain après un entier `n` donné (un entier `p` est un nombre premier de Germain si `p` et `2p+1` sont premiers). Quel est le premier nombre premier de Germain après `n = 100000` ?
 
 
-# Les chaines de caractères
+# 5 - Les chaines de caractères
 
 Les exercices d'application ci dessous correspondent au chapitre [Chaines de caractères](https://perso.esiee.fr/~courivad/Python/05-chaines.html).
 
@@ -84,7 +84,7 @@ Ecrire la fonction `check_password()` permettant de tester la robustesse d’un 
 Le mot de passe contient uniquement des lettres latines ASCII ou des chiffres. Une version plus élaborée pourrait imposer la présence d’un signe de ponctuation.
 
 
-# Les listes
+# 6 - Les listes
 
 Les exercices d'application ci dessous correspondent au chapitre [Les listes](https://perso.esiee.fr/~courivad/Python/06-listes.html).
 
@@ -127,7 +127,7 @@ En mathématiques récréatives, un nombre Harshad est un entier naturel qui est
 Un entier naturel est un nombre heureux si, lorsqu’on calcule la somme des carrés de ses chiffres dans son écriture en base 10 puis la somme des carrés des chiffres du nombre obtenu et ainsi de suite, on aboutit au nombre 1. Ecrire la fonction récursive `is_happy()` permettant de vérifier si un entier `n` passé en paramètre est un nombre heureux ou pas. La fonction doit retourner un booléen. Vous écrirez également les doctests associés. Afficher les nombres heureux jusqu’à 100.
 
 
-# Les tuples
+# 7 - Les tuples
 
 Les exercices d'application ci dessous correspondent au chapitre [Les tuples](https://perso.esiee.fr/~courivad/Python/07-tuples.html).
 
@@ -143,14 +143,14 @@ Lancement des tests:
 - Linux : `python3 -m doctest ex07.py -v`
 
 
-# Les sets
+# 8 - Les sets
 
 L'exercice d'application ci dessous correspond au chapitre [Les sets](https://perso.esiee.fr/~courivad/Python/08-sets.html).
 
 Modifier la seule instruction return de la fonction `searchext()` de l’exercice d’application sur les listes pour que la liste des extensions retournée ne contienne chaque extension qu'une et une seule fois.
 
 
-# Les fichiers
+# 9 - Les fichiers
 
 L'exercice d'application ci dessous correspond au chapitre [Les fichiers](https://perso.esiee.fr/~courivad/Python/09-files.html).
 
@@ -174,13 +174,10 @@ Quelques indications:
 - lorsqu’on travaille avec une archive, la fonction `csv.reader()` n’est pas disponible. Il faut utiliser la méthode `read()` qui retourne une séquence de bytes.
 - cette séquence de bytes est convertie en `str` avec la méthode `decode()`.
 
----
-Note : 
+**Note** : la liste ne permet pas une performance algorithmique optimale. La structure de données la plus appropriée à ce type de problème est le dictionnaire que nous verrons au chapitre suivant.
+{: .note}
 
-La liste ne permet pas une performance algorithmique optimale. La structure de données la plus appropriée à ce type de problème est le dictionnaire que nous verrons au chapitre suivant.
----
-
-# Les dictionnaires
+# 10 - Les dictionnaires
 
 L'exercice d'application ci dessous correspond au chapitre [Les dictionnaires](https://perso.esiee.fr/~courivad/Python/10-dict.html).
 
@@ -197,7 +194,7 @@ Lancement des tests:
 - Windows : `python -m doctest ex10.py -v`
 - Linux : `python3 -m doctest ex10.py -v`
 
-# Les exceptions
+# 11 - Les exceptions
 
 L'exercice d'application ci dessous correspond au chapitre [Les exceptions](https://perso.esiee.fr/~courivad/Python/11-exceptions.html).
 
@@ -210,7 +207,7 @@ Lancement des tests:
 - Windows : `python -m doctest ex11.py -v`
 - Linux : `python3 -m doctest ex11.py -v`
 
-# Les classes
+# 12 - Les classes
 
 Les exercices d'application ci dessous correspondent au chapitre [Les classes](https://perso.esiee.fr/~courivad/Python/12-classes.html).
 
@@ -249,7 +246,7 @@ Une fois la classe Vector2D opérationnelle pour une instance, vérifier la bonn
 - Windows : `python -m doctest ex12.py -v`
 - Linux : `python3 -m doctest ex12.py -v`
 
-# Internet
+# 13 - Internet
 
 L'exercice d'application ci dessous correspond au chapitre [Internet](https://perso.esiee.fr/~courivad/Python/13-internet.html).
 
@@ -280,7 +277,7 @@ Une fois la fonction main() opérationnelle, lancer les doctests. Le fichier `Da
 - Windows : `python -m doctest ex13.py -v`
 - Linux : `python3 -m doctest ex13.py -v`
 
-# Géolocalisation
+# 15 - Géolocalisation
 
 L'exercice d'application ci dessous correspond au chapitre [Géolocatisation](https://perso.esiee.fr/~courivad/Python/15-geo.html).
 
