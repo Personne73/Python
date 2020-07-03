@@ -1,6 +1,6 @@
-Ce projet contient les ressources nécessaires pour suivre [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html) et faire les exercices associés.
+Ce dépôt contient une description de l'environnement de travail, les ressources additionnelles (exercices, données) qui accompagnent [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), et une méthodologie de développement.
 
-# Le contexte général
+# L'environnement de travail
 
 Pour faciliter le développement du code informatique, il est important (entre autres) de disposer :
 
@@ -9,15 +9,15 @@ Pour faciliter le développement du code informatique, il est important (entre a
 
 Dans le cadre de ce cours nous utiliserons le système [git](https://fr.wikipedia.org/wiki/Git). Pour une présentation (un peu) approfondie, on peut utiliser [le tutoriel OpenClassrooms](https://openclassrooms.com/fr/courses/1233741-gerez-vos-codes-source-avec-git).
 
-# Le contexte ESIEE
+## Le contexte ESIEE
 
 L'ESIEE a déployé un serveur GitLab et vous disposez d'un compte sur la plateforme https://git.esiee.fr/. La connexion se fait avec vos identifiants habituels.
 
-Les machines de l'ESIEE disposent du système [git](https://fr.wikipedia.org/wiki/Git).
+Les machines de l'ESIEE (Windows et Linux) disposent du système [git](https://fr.wikipedia.org/wiki/Git).
 
-# Obtenir les ressources
+# Les ressources additionnelles
 
-Pour suivre pleinement [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), des ressources nécessaires sont requises. Il s'agit des données utilisées pour les exemples et les exercices, ainsi que le squelette des exercices d’application.
+Pour suivre pleinement [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), des ressources additionnelles sont requises. Il s'agit des données utilisées pour les exemples et les exercices, ainsi que le squelette des exercices d’application.
 
 Ces ressources sont disponibles sur ce dépôt (https://git.esiee.fr/courivad/Python). Il contient également des informations générales sur la méthodologie de développement.
 
@@ -59,7 +59,7 @@ Le terminal standard est configuré pour fonctionner directement avec `git`.
 
 
 
-## Les ressources
+## Le contenu du dépôt
 
 Le dossier `Python` cloné à l'étape précédente, contient l'ensemble des ressources nécessaires pour suivre ce cours.
 
@@ -71,27 +71,45 @@ Le dossier `Python` cloné à l'étape précédente, contient l'ensemble des res
 
 # Méthodologie de développement
 
-## Coder
-
-Le travail de développement se fait sur une machine locale (dans le répertoire `Python` créé lors de l'opération de clonage) avec un terminal (Anaconda Prompt) et un éditeur de texte ([Visual Studio Code](https://code.visualstudio.com/download)).
+Le travail de développement se fait sur une machine locale (dans le répertoire `Python` créé lors de l'opération de clonage) avec un terminal et un éditeur de texte ([Visual Studio Code](https://code.visualstudio.com/download)). Suivant le système d'exploitation utilisé, il faudra démarrer un terminal spécifique (Windows) ou non (Linux).
 
 ### Windows
 
 Nous travaillons dans l'environnement Anaconda. Il est installé sur les machines Windows de l'ESIEE et disponible au téléchargement [ici](https://www.anaconda.com/download/) pour vos machines personnelles.
 
-### Démarrer un terminal Anaconda Prompt
+Pour disposer de l'ensemble de l'environnement Anaconda, il faut démarrer un terminal Anaconda Prompt (menu "Démarrer" de Windows).
+Toutes les commandes Windows sont disponibles. Attention, un terminal classique (`cmd`) ne dispose pas de toutes les variables d'environnement nécessaires pour permettre l'utilisation de l'environnement Anaconda.
 
-![Démarrer](_images/demarrer.png)
+Dans ce terminal, l'interpréteur Python 3.7 se lance avec la commande `python`:
 
-### Lancer Visual Studio Code
+    $ python --version
+    Python 3.7.x
+    
+L'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download) est démarré depuis le terminal Anaconda avec la commande `code`.
 
-Dans ce terminal, la commande `code` permet de lancer l'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download). 
+### Linux
 
-![Lancer Visual Studio Code](_images/anacondaprompt.png)
+Le terminal classique convient. L'interpréteur Python 3.7 se lance avec la commande `python3`:
+
+    $ python3 --version
+    Python 3.7.x
+    
+Attention la commande `python` lance une version obsolète de Python
+    
+    $ python --version
+    Python 2.7.x
+    
+L'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download) est démarré depuis le bureau Linux.
+
+## Coder
+
+Quel que soit l'OS choisi (Windows ou Linux), Le travail peut s'effectuer entièrement dans l'environnement [Visual Studio Code](https://code.visualstudio.com/download).
 
 ### Ouvrir le répertoire de travail
 
-Ouvrir le dossier `Python` qui contient les ressources nécessaires pour ce cours avec la commande `Open Folder...`. Au démarrage, ce répertoire est un clone du projet  https://git.esiee.fr/courivad/Python. Il contiendra par la suite le travail réalisé dans le cadre de ce cours. Vous pouvez utiliser `git`, également intégré à Visual Studio Code, pour maintenir la synchronisation entre votre répertoire et le repo distant.
+Ouvrir le dossier `Python` qui contient les ressources nécessaires pour ce cours avec la commande `Open Folder...`. Au démarrage, ce répertoire est un clone du projet https://git.esiee.fr/<YOUR_GIT_NAME>/Python. Il contiendra par la suite le travail réalisé dans le cadre de ce cours. 
+
+Vous pouvez utiliser `git`, depuis le terminal ou depuis Visual Studio Code, pour maintenir la synchronisation entre votre répertoire local et votre repo distant.
 
 ![Ouvrir le répertoire de travail](_images/openfolder.png)
 
@@ -101,16 +119,16 @@ Visual Studio Code dispose d'un terminal intégré, que l'on fait apparaître ou
 
 ![Ouvrir le répertoire de travail](_images/afficher-terminal.png)
 
-Ce terminal fonctionne de la même manière que le terminal ouvert par la commande `Anaconda Prompt`. Toutes les commandes Windows sont disponibles. Toutes les variables d'environnement ont été initialisées pour permettre l'utilisation de l'environnement Anaconda.
+Ce terminal est une vue intégrée du terminal Linux ou Windows (`Anaconda Prompt`.) 
 
 ![Terminal intégré](_images/terminal.png)
 
 Ce terminal intégré permet :
 
-- d'exécuter les programmes Python avec la syntaxe `python nom_du_programme.py` 
-- et de lancer l'interpréteur interactif avec la syntaxe `python` . Le prompt (l'invite de commande) de ce dernier est différent (`>>>`) et permet d'identifier la nature des commandes attendues. 
+- d'exécuter les programmes Python avec la syntaxe `python nom_du_programme.py` (Windows) ou `python3 nom_du_programme.py` (Linux).
+- ou de lancer l'interpréteur interactif avec la syntaxe `python` (Windows) ou `python3` (Linux) . Le prompt (l'invite de commande) de ce dernier est différent (`>>>`) et permet d'identifier la nature des commandes attendues. 
   
-Une erreur courante est d'entrer des commandes Python dans un terminal Windows ou l'inverse, des commandes Windows dans un interpréteur Python.
+Une erreur courante est d'entrer des commandes Python dans un terminal (Windows ou Linux) ou l'inverse, des commandes Windows ou Linux dans un interpréteur Python.
 
 ![Python](_images/python.png)
 
