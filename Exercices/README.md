@@ -48,7 +48,7 @@ Utiliser la fonction `est_premier()` pour rechercher les `n` premiers nombres pr
 
 Utiliser la fonction `est_premier()` pour rechercher:
 
-- le premier nombre de Fermat $`2^{2^n+1}`$ (22𝑛+1) qui n’est pas premier.
+- le premier nombre de Fermat $`2^{2^n+1}`$ qui n’est pas premier.
 - le premier nombre premier après un entier `n` donné. Quel est le premier nombre premier après `n = 100000` ?
 - le premier couple de nombres premiers jumeaux après un entier `n` donné (`p` et `p'` sont des nombres premiers jumeaux si `p` et `p'` sont premiers et si `p'-p = 2`). Quel est le premier couple de nombres premiers jumeaux après `n = 100000` ?
 - le premier nombre premier de Germain après un entier `n` donné (un entier `p` est un nombre premier de Germain si `p` et `2p+1` sont premiers). Quel est le premier nombre premier de Germain après `n = 100000` ?
@@ -56,7 +56,7 @@ Utiliser la fonction `est_premier()` pour rechercher:
 
 # Les chaines de caractères
 
-L'exercice d'application ci dessous correspond au chapitre [Fonctions et modules](https://perso.esiee.fr/~courivad/Python/05-chaines.html).
+Les exercices d'application ci dessous correspondent au chapitre [Chaines de caractères](https://perso.esiee.fr/~courivad/Python/05-chaines.html).
 
 Un palindrome est un mot ou une phrase qui se lit indifféremment de droite à gauche et de gauche à droite. Ecrire une fonction `pal()` permettant d’effectuer ce test (les espaces seront ignorés et minuscule et majuscules seront considérées comme identiques).
 
@@ -114,7 +114,7 @@ Ecrire une fonction `searchext()` qui prend en argument une liste de strings con
 
 Ecrire une fonction `guess_language()` qui prend en argument une string contenant un texte dans une langue (anglais, français, allemand et espagnol) et retourne la langue utilisée sous forme de chaîne de caractères. La détection se base sur l’analyse fréquentielle. La liste des fréquences est fournie dans les variables globales ENGLISH, FRENCH, GERMAN et SPANISH. TRTAB est utilisée dans la méthode `translate()` qui permet de remplacer les caractères accentués par les caractères non accentués correspondant dans la chaîne de caractères sur laquelle elle est appelée.
 
-Les chaînes de caractères LCELR, IF, POEMAXX et GOETHE contiennent des textes dans chacune des langues considérées.
+Pour tester le bon fonctionnement, les chaînes de caractères LCELR, IF, POEMAXX et GOETHE contiennent des textes dans chacune des langues considérées.
 
 ## Si le temps le permet
 
@@ -125,5 +125,57 @@ En mathématiques récréatives, un nombre Harshad est un entier naturel qui est
 ### Nombre heureux
 
 Un entier naturel est un nombre heureux si, lorsqu’on calcule la somme des carrés de ses chiffres dans son écriture en base 10 puis la somme des carrés des chiffres du nombre obtenu et ainsi de suite, on aboutit au nombre 1. Ecrire la fonction récursive `is_happy()` permettant de vérifier si un entier `n` passé en paramètre est un nombre heureux ou pas. La fonction doit retourner un booléen. Vous écrirez également les doctests associés. Afficher les nombres heureux jusqu’à 100.
+
+
+# Les tuples
+
+Les exercices d'application ci dessous correspondent au chapitre [Les tuples](https://perso.esiee.fr/~courivad/Python/07-tuples.html).
+
+Ecrire la fonction `artcode()` qui prend une chaîne de caractères pour argument, et retourne une liste de tuples. Chaque tuple est composé d’un caractère (et d’un seul) et du nombre d’occurences consécutives de ce caractère. Par exemple, la chaîne `"MMMMaaacXolloMM"` est représentée par la liste `[('M', 4), ('a', 3), ('c', 1), ('X', 1), ('o', 1), ('l', 2), ('o', 1), ('M', 2)]`.
+
+Ecrire la fonction réciproque `artdecode()` qui prend une liste de tuples en argument et retourne la chaîne de caractères correspondante. Cette fonction est la fonction réciproque de `artcode()`.
+
+Construire les chaînes de caractères correspondant aux variables L1 et L2. Vous pouvez trouver des [ASCII art](https://en.wikipedia.org/wiki/ASCII_art) simples sur le site [ASCII art archive](https://www.asciiart.eu/) ou construire les votres à partir d’images et de [ce générateur](https://www.ascii-art-generator.org/).
+
+Lancement des tests:
+
+- Windows : `python -m doctest ex07.py -v`
+- Linux : `python3 -m doctest ex07.py -v`
+
+
+# Les sets
+
+L'exercice d'application ci dessous correspond au chapitre [Les sets](https://perso.esiee.fr/~courivad/Python/08-sets.html).
+
+Modifier la seule instruction return de la fonction `searchext()` de l’exercice d’application sur les listes pour que la liste des extensions retournée ne contienne chaque extension qu'une et une seule fois.
+
+
+# Les fichiers
+
+L'exercice d'application ci dessous correspond au chapitre [Les fichiers](https://perso.esiee.fr/~courivad/Python/09-files.html).
+
+Ecrire la fonction `extract_temp()` qui prend en argument une date au format `AAAAMMJJ`, un code de station météo parmi ceux disponibles dans la liste des stations météo (`Data/stations-meteo.csv`) et retourne une liste des températures.
+
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex09.py`. En cas de difficulté, le fichier `ex09-easy.py` contient des renseignements supplémentaires. 
+
+Vous devez écrire le code de la fonction `extract_temp()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte.
+
+A chaque modification de `extract_temp()`, tester son fonctionnement dans la fonction `main()` en appelant `extract_temp()` pour un argument particulier et en affichant la valeur de retour.
+
+Une fois la fonction `extract_temp()` opérationnelle pour un argument, ET SEULEMENT DANS CE CAS, lancer les doctests :
+
+- Windows : `python -m doctest ex07.py -v`
+- Linux : `python3 -m doctest ex07.py -v`
+
+Quelques indications:
+
+- le fichier `Data/meteofrance2014.zip` contient les observations météorologiques en France pour l’année 2014, et l’explication des variables se trouve [sur ce lien](https://donneespubliques.meteofrance.fr/client/document/doc_parametres_synop_168.pdf).
+- le module `zipfile` permet la manipulation des fichiers compressés. En particulier la méthode `namelist()` permet de lister le contenu de l’archive.
+- lorsqu’on travaille avec une archive, la fonction `csv.reader()` n’est pas disponible. Il faut utiliser la méthode `read()` qui retourne une séquence de bytes.
+- cette séquence de bytes est convertie en `str` avec la méthode `decode()`.
+
+---
+*Note* : La liste ne permet pas une performance algorithmique optimale. La structure de données la plus appropriée à ce type de problème est le dictionnaire que nous verrons au chapitre suivant.
+---
 
 
