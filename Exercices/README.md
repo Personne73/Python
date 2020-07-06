@@ -1,7 +1,9 @@
+# Exercices d'application
+
 Vous trouverez ici les exercices d'application permettant de valider les connaissances du [cours Python](https://perso.esiee.fr/~courivad/Python)
 
 
-# 3 - Contrôle de l'exécution d'un programme
+## 3 - Contrôle de l'exécution d'un programme
 
 L'exercice d'application ci dessous correspond au chapitre [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/Python/03-controle.html).
 
@@ -22,7 +24,7 @@ L’affichage doit ressembler à:
     $ python ex03.py
     733  : True
     
-## Si le temps le permet
+### Si le temps le permet
 
 On peut définir quelques métriques pour les suites de Syracuse:
 
@@ -36,7 +38,7 @@ Ecrivez le code permettant de rechercher:
 - le temps de vol en altitude d’une suite de Syracuse et la valeur maximum du temps de vol des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
 - le temps de vol en altitude d’une suite de Syracuse et la valeur maximum du temps de vol en altitude des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
 
-# 4 - Fonctions et modules
+## 4 - Fonctions et modules
 
 L'exercice d'application ci dessous correspond au chapitre [Fonctions et modules](https://perso.esiee.fr/~courivad/Python/04-fonctions.html).
 
@@ -44,7 +46,7 @@ Encapsuler dans une fonction booléenne `est_premier()` le code correspondant à
 
 Utiliser la fonction `est_premier()` pour rechercher les `n` premiers nombres premiers.
 
-## Si le temps le permet
+### Si le temps le permet
 
 Utiliser la fonction `est_premier()` pour rechercher:
 
@@ -54,7 +56,7 @@ Utiliser la fonction `est_premier()` pour rechercher:
 - le premier nombre premier de Germain après un entier `n` donné (un entier `p` est un nombre premier de Germain si `p` et `2p+1` sont premiers). Quel est le premier nombre premier de Germain après `n = 100000` ?
 
 
-# 5 - Les chaines de caractères
+## 5 - Les chaines de caractères
 
 Les exercices d'application ci dessous correspondent au chapitre [Chaines de caractères](https://perso.esiee.fr/~courivad/Python/05-chaines.html).
 
@@ -63,6 +65,9 @@ Un palindrome est un mot ou une phrase qui se lit indifféremment de droite à g
 Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex05.py`. En cas de difficulté, le fichier `ex05-easy.py` contient des renseignements supplémentaires. 
 
 Vous devez écrire le code de la fonction `pal()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte.
+
+**Note** : ce problème peut être résolu à "bas niveau" in itérant sur les caractères ou à plus "haut niveau" en utilisant les méthodes spécifiques aux chaines de caractères. La deuxième approche, plus *pythonique* est à privilégier.
+{: .note}
 
 A chaque modification de `pal()`, tester son fonctionnement dans la fonction `main()` en appelant `pal()` pour un argument particulier et en affichant la valeur de retour. Jeter un oeil aux doctests de la fonction pour avoir un exemple d’appel et d’utilisation de la valeur de retour.
 
@@ -73,7 +78,7 @@ Une fois la fonction `pal()` opérationnelle pour un argument, ET SEULEMENT DANS
 
 Une version plus élaborée pourrait traiter le cas des caractères accentués et de la ponctuation.
 
-## Si le temps le permet
+### Si le temps le permet
 
 Ecrire la fonction `check_password()` permettant de tester la robustesse d’un mot de passe. Le mot de passe est considéré comme fort si:
 
@@ -84,13 +89,13 @@ Ecrire la fonction `check_password()` permettant de tester la robustesse d’un 
 Le mot de passe contient uniquement des lettres latines ASCII ou des chiffres. Une version plus élaborée pourrait imposer la présence d’un signe de ponctuation.
 
 
-# 6 - Les listes
+## 6 - Les listes
 
 Les exercices d'application ci dessous correspondent au chapitre [Les listes](https://perso.esiee.fr/~courivad/Python/06-listes.html).
 
 Pour ces exercices, vous devez utiliser en priorité le squelette contenu dans le fichier `ex06.py`. En cas de difficulté, le fichier `ex06-easy.py` contient des renseignements supplémentaires.
 
-## Contenu d’un répertoire
+### Contenu d’un répertoire
 
 Utiliser les modules `os` et `os.path` pour écrire une fonction `scand()` qui prend en argument un nom de répertoire et retourne deux listes de strings :
 
@@ -106,30 +111,32 @@ Une fois la fonction `scand()` opérationnelle pour un argument, ET SEULEMENT DA
 - Windows : `python -m doctest ex06.py -v`
 - Linux : `python3 -m doctest ex06.py -v`
 
-## Liste des extensions
+### Liste des extensions
 
 Ecrire une fonction `searchext()` qui prend en argument une liste de strings contenant des noms de fichiers (du type de celles renvoyées par `scand()`) et retourne la liste des extensions de ces fichiers. Les extensions peuvent apparaître plusieurs fois dans la liste retournée, et doivent être en minuscules.
 
-## Recherche de langue
+### Recherche de langue
 
 Ecrire une fonction `guess_language()` qui prend en argument une string contenant un texte dans une langue (anglais, français, allemand et espagnol) et retourne la langue utilisée sous forme de chaîne de caractères. La détection se base sur l’analyse fréquentielle. La liste des fréquences est fournie dans les variables globales ENGLISH, FRENCH, GERMAN et SPANISH. TRTAB est utilisée dans la méthode `translate()` qui permet de remplacer les caractères accentués par les caractères non accentués correspondant dans la chaîne de caractères sur laquelle elle est appelée.
 
 Pour tester le bon fonctionnement, les chaînes de caractères LCELR, IF, POEMAXX et GOETHE contiennent des textes dans chacune des langues considérées.
 
-## Si le temps le permet
+### Si le temps le permet
 
-### Nombre de Harshad
+#### Nombre de Harshad
 
 En mathématiques récréatives, un nombre Harshad est un entier naturel qui est divisible par la somme de ses chiffres dans une base donnée. Ecrire la fonction `is_harshad()` permettant de vérifier si un entier `n` (base 10) passé en paramètre est un nombre de Harshad ou pas. La fonction doit retourner un booléen. Vous écrirez également les doctests associés. Afficher les nombres de Harshad jusqu’à 100.
 
-### Nombre heureux
+#### Nombre heureux
 
 Un entier naturel est un nombre heureux si, lorsqu’on calcule la somme des carrés de ses chiffres dans son écriture en base 10 puis la somme des carrés des chiffres du nombre obtenu et ainsi de suite, on aboutit au nombre 1. Ecrire la fonction récursive `is_happy()` permettant de vérifier si un entier `n` passé en paramètre est un nombre heureux ou pas. La fonction doit retourner un booléen. Vous écrirez également les doctests associés. Afficher les nombres heureux jusqu’à 100.
 
 
-# 7 - Les tuples
+## 7 - Les tuples
 
 Les exercices d'application ci dessous correspondent au chapitre [Les tuples](https://perso.esiee.fr/~courivad/Python/07-tuples.html).
+
+Pour ces exercices, vous devez utiliser en priorité le squelette contenu dans le fichier `ex07.py`. En cas de difficulté, le fichier `ex07-easy.py` contient des renseignements supplémentaires.
 
 Ecrire la fonction `artcode()` qui prend une chaîne de caractères pour argument, et retourne une liste de tuples. Chaque tuple est composé d’un caractère (et d’un seul) et du nombre d’occurences consécutives de ce caractère. Par exemple, la chaîne `"MMMMaaacXolloMM"` est représentée par la liste `[('M', 4), ('a', 3), ('c', 1), ('X', 1), ('o', 1), ('l', 2), ('o', 1), ('M', 2)]`.
 
@@ -143,14 +150,7 @@ Lancement des tests:
 - Linux : `python3 -m doctest ex07.py -v`
 
 
-# 8 - Les sets
-
-L'exercice d'application ci dessous correspond au chapitre [Les sets](https://perso.esiee.fr/~courivad/Python/08-sets.html).
-
-Modifier la seule instruction return de la fonction `searchext()` de l’exercice d’application sur les listes pour que la liste des extensions retournée ne contienne chaque extension qu'une et une seule fois.
-
-
-# 9 - Les fichiers
+## 8 - Les fichiers
 
 L'exercice d'application ci dessous correspond au chapitre [Les fichiers](https://perso.esiee.fr/~courivad/Python/09-files.html).
 
@@ -164,8 +164,8 @@ A chaque modification de `extract_temp()`, tester son fonctionnement dans la fon
 
 Une fois la fonction `extract_temp()` opérationnelle pour un argument, ET SEULEMENT DANS CE CAS, lancer les doctests :
 
-- Windows : `python -m doctest ex09.py -v`
-- Linux : `python3 -m doctest ex09.py -v`
+- Windows : `python -m doctest ex08.py -v`
+- Linux : `python3 -m doctest ex08.py -v`
 
 Quelques indications:
 
@@ -177,7 +177,21 @@ Quelques indications:
 **Note** : la liste ne permet pas une performance algorithmique optimale. La structure de données la plus appropriée à ce type de problème est le dictionnaire que nous verrons au chapitre suivant.
 {: .note}
 
-# 10 - Les dictionnaires
+
+## 9 - Les sets
+
+L'exercice d'application ci dessous correspond au chapitre [Les sets](https://perso.esiee.fr/~courivad/Python/08-sets.html).
+
+Modifier la seule instruction return de la fonction `searchext()` de l’exercice d’application sur les listes pour que la liste des extensions retournée ne contienne chaque extension qu'une et une seule fois.
+
+### Les mots de Molière
+
+Les fichiers `Data/avare.txt` et `Data/bourgeois-gentilhomme.txt` contiennent deux célèbres pièces de théatre de Molière. Rechercher les mots communs à ces deux pièces. Ceux qui ne sont présents que dans l'une et pas dans l'autre...
+
+Pour cet exercice, aucun squelette n'est fourni. Une fois le code opérationnel, vous devez mettre en place les doctest associés.
+
+
+## 10 - Les dictionnaires
 
 L'exercice d'application ci dessous correspond au chapitre [Les dictionnaires](https://perso.esiee.fr/~courivad/Python/10-dict.html).
 
@@ -194,7 +208,7 @@ Lancement des tests:
 - Windows : `python -m doctest ex10.py -v`
 - Linux : `python3 -m doctest ex10.py -v`
 
-# 11 - Les exceptions
+## 11 - Les exceptions
 
 L'exercice d'application ci dessous correspond au chapitre [Les exceptions](https://perso.esiee.fr/~courivad/Python/11-exceptions.html).
 
@@ -207,11 +221,11 @@ Lancement des tests:
 - Windows : `python -m doctest ex11.py -v`
 - Linux : `python3 -m doctest ex11.py -v`
 
-# 12 - Les classes
+## 12 - Les classes
 
 Les exercices d'application ci dessous correspondent au chapitre [Les classes](https://perso.esiee.fr/~courivad/Python/12-classes.html).
 
-## La classe `Point2D`
+### La classe `Point2D`
 
 Créer une classe `Point2D` possédant 2 attributs `x` et `y` (représentant les coordonnées du point dans un espace à 2 dimensions) possédant les caractéristiques suivantes:
 
@@ -230,7 +244,7 @@ Lancement des tests:
 - Windows : `python -m doctest ex12.py -v`
 - Linux : `python3 -m doctest ex12.py -v`
 
-## La classe `Vector2D`
+### La classe `Vector2D`
 
 Créer une classe `Vector2D` possédant 2 attributs `x` et `y` qui représentent les coordonnées du vecteur dans un espace à 2 dimensions. Les arguments du constructeur naturel sont deux points de la classe `Point2D`:
 
@@ -246,7 +260,7 @@ Une fois la classe Vector2D opérationnelle pour une instance, vérifier la bonn
 - Windows : `python -m doctest ex12.py -v`
 - Linux : `python3 -m doctest ex12.py -v`
 
-# 13 - Internet
+## 13 - Internet
 
 L'exercice d'application ci dessous correspond au chapitre [Internet](https://perso.esiee.fr/~courivad/Python/13-internet.html).
 
@@ -277,7 +291,7 @@ Une fois la fonction main() opérationnelle, lancer les doctests. Le fichier `Da
 - Windows : `python -m doctest ex13.py -v`
 - Linux : `python3 -m doctest ex13.py -v`
 
-# 15 - Géolocalisation
+## 15 - Géolocalisation
 
 L'exercice d'application ci dessous correspond au chapitre [Géolocatisation](https://perso.esiee.fr/~courivad/Python/15-geo.html).
 
