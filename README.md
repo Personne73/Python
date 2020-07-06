@@ -72,6 +72,10 @@ Le dossier `Python` cloné à l'étape précédente, contient l'ensemble des res
 
 Le travail de développement se fait sur une machine locale (dans le répertoire `Python` créé lors de l'opération de clonage) avec un terminal et un éditeur de texte ([Visual Studio Code](https://code.visualstudio.com/download)). Suivant le système d'exploitation utilisé, il faudra démarrer un terminal spécifique (Windows) ou non (Linux).
 
+### Interpréteur Python
+
+Python dispose d'un interpréteur de type REPL permettant d'exécuter rapidement quelques instructions simples.
+
 #### Windows
 
 Nous travaillons dans l'environnement Anaconda. Il est installé sur les machines Windows de l'ESIEE et disponible au téléchargement [ici](https://www.anaconda.com/download/) pour vos machines personnelles.
@@ -83,14 +87,10 @@ Dans ce terminal, l'interpréteur Python 3.7 se lance avec la commande `python`:
     $ python --version
     Python 3.7.x
     
-L'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download) est démarré depuis le terminal Anaconda avec la commande `code`.
-
-    $ code
-    $
 
 #### Linux
 
-Le terminal classique convient. L'interpréteur Python 3.7 se lance avec la commande `python3`:
+Le terminal classique convient. L'interpréteur Python 3.7 se lance directement avec la commande `python3`:
 
     $ python3 --version
     Python 3.7.x
@@ -100,11 +100,34 @@ Attention la commande `python` lance une version obsolète de Python
     $ python --version
     Python 2.7.x
     
-L'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download) est démarré depuis le bureau Linux.
 
 ### Coder
 
+Lorsqu'on développe des programmes plus complexes, il est nécessaire de stocker les instructions à exécuter dans un fichier avec un éditeur de texte.
+
 Quel que soit l'OS choisi (Windows ou Linux), Le travail peut s'effectuer entièrement dans l'environnement [Visual Studio Code](https://code.visualstudio.com/download).
+
+#### Windows
+
+L'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download) est démarré depuis le terminal Anaconda avec la commande `code`.
+
+    $ code
+    $
+    
+#### Linux
+
+L'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download) est démarré depuis le bureau Linux.
+
+
+### L'éditeur de texte
+
+[Visual Studio Code](https://code.visualstudio.com/download) propose une interface intégrée comprenant:
+
+- l'éditeur de texte proprement dit
+- un navigateur de fichier
+- un terminal intégré
+- et d'autres fonctionnalités facilitant la programmation
+
 
 #### Ouvrir le répertoire de travail
 
@@ -152,15 +175,15 @@ A la fin de chaque nouvelle séance:
 
 ### Environnement virtuel
 
-Dans un environnement complexe, où des conflits de versions de packages peuvent apparaître, il est possible de mettre en oeuvre le concept d'environnement virtuel. On utilisera alors de préférence `pipenv <https://github.com/pypa/pipenv>`_ qui permet de créer des environnements isolés et reproductibles.
+Dans un environnement complexe, où des conflits de versions de packages peuvent apparaître, il est possible de mettre en oeuvre le concept d'environnement virtuel. On utilisera alors de préférence [pipenv](https://github.com/pypa/pipenv) qui permet de créer des environnements isolés et reproductibles.
 
 ### Ajouter des packages
 
-Bien que l'environnement Anaconda soit assez complet, il sera parfois nécessaire d'installer des modules additionnels. La procédure est assez similaire quel que soit le système d'exploitation et utilisera l'utilitaire `pip <https://pip.pypa.io/en/stable/>`_, l'installateur de package de Python.
+Il sera parfois nécessaire d'installer des modules additionnels. La procédure est assez similaire quel que soit le système d'exploitation et utilisera l'utilitaire `pip <https://pip.pypa.io/en/stable/>`_, l'installateur de package de Python.
 
 #### Windows
 
-On installera les packages additionnels depuis le terminal `Anaconda Prompt`:
+Bien que l'environnement Anaconda soit assez complet, on peut installer des packages additionnels depuis le terminal `Anaconda Prompt`:
 
     $ pip install un_package
     Collecting un_package
@@ -177,7 +200,7 @@ Si l'installation s'est correctement déroulée, l'importation du module doit ê
 
 #### Linux
 
-Sous Linux:
+Sous Linux, l'utilitaire `pip3` est utilisé:
 
     $ pip3 install un_package
     Collecting un_package
