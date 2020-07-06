@@ -1,6 +1,6 @@
-Ce dépôt contient une description de l'environnement de travail, les ressources additionnelles (exercices, données) qui accompagnent [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), et une méthodologie de développement.
-
 # L'environnement de travail
+
+Ce dépôt contient une les ressources additionnelles (exercices, données) qui accompagnent [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), ainsi qu'une méthodologie de développement.
 
 Pour faciliter le développement du code informatique, il est important (entre autres) de disposer :
 
@@ -13,17 +13,17 @@ L'ESIEE a déployé un serveur GitLab et vous disposez d'un compte sur la platef
 
 Les machines de l'ESIEE (Windows et Linux) disposent du système [git](https://fr.wikipedia.org/wiki/Git).
 
-# Les ressources additionnelles
+## Les ressources additionnelles
 
 Pour suivre pleinement [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), des ressources additionnelles sont requises. Il s'agit des données utilisées pour les exemples et les exercices, ainsi que le squelette des exercices d’application.
 
-Ces ressources sont disponibles sur ce dépôt (https://git.esiee.fr/courivad/Python). Il contient également des informations générales sur la méthodologie de développement.
+Ces ressources sont disponibles sur ce dépôt (https://git.esiee.fr/courivad/Python). La procédure qui suit va vous permettre de récupérer ces ressources dans votre environnement personnel.
 
-## Forker le projet initial
+### Forker le projet initial
 
 Le dépôt (https://git.esiee.fr/courivad/Python) ne vous appartient pas, ce qui signifie que vous avez uniquement les droits en lecture. Vous pouvez donc uniquement le copier. C'est suffisant pour une utilisation minimale.
 
-Vous pouvez également souhaiter avoir une utilisation plus avancée et disposer de votre propre dépôt distant (avec les droits d'écriture). Vous pourrez ainsi synchroniser votre travail local avec votre propre dépôt distant et disposer ainsi dans le cloud d'une version "à jour" de votre travail. A condition bien évidemment d'effectuer les opérations de synchronisation nécessaires (ce n'est pas automatique)
+Vous pouvez également souhaiter avoir une utilisation plus avancée et disposer de votre propre dépôt distant (avec les droits d'écriture). Vous pourrez ainsi synchroniser votre travail local avec votre propre dépôt distant et disposer ainsi dans le cloud d'une version "à jour" de votre travail. A condition bien évidemment d'effectuer les opérations de synchronisation nécessaires (ce n'est pas automatique).
 
 Le processus de copie d'un dépôt distant dans votre espace personnel distant s'appelle un "fork". Un fork est une copie complète du projet. Par la suite, cette copie sera appelée "repo distant". Vous pourrez ultérieurement ajouter, supprimer ou modifier du contenu de ce repo distant:
 
@@ -31,24 +31,23 @@ Le processus de copie d'un dépôt distant dans votre espace personnel distant s
 - rechercher le projet https://git.esiee.fr/courivad/Python
 - le forker (vous trouverez la commande quelque part sur la page du projet)
 
-Une fois cette étape effectuée, vous dsposez de la totalité des ressources nécessaires dans votre espace Git personnel.
+Une fois cette étape effectuée, vous dsposez de la totalité des ressources nécessaires dans votre espace Git personnel (cloud).
 
-## Cloner le projet sur une machine locale
+### Cloner le projet sur une machine locale
 
 Le travail de développement s'effectue sur une machine locale (votre machine personnelle ou une machine de l'ESIEE). Il faut donc copier le repo distant sur la machine de développement. C'est le processus de clonage.
-
 
 Sur une machine locale, on clone le projet à partir du repo distant avant de poursuivre le travail de développement. Cloner un projet c'est créer un répertoire local contenant la totalité des fichiers du repo distant. 
 
 
-### Windows
+#### Windows
 
 Lancez la commande `Git Bash`, qui ouvre un terminal configuré pour fonctionner avec `git`.
  
 - placez vous dans votre répertoire de travail. Sur une machine de l'ESIEE, placez vous dans votre espace réseau (disque U:) : `cd /u`
 - clonez votre repo distant : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python`
 
-### Linux
+#### Linux
 
 Le terminal standard est configuré pour fonctionner directement avec `git`.
 
@@ -57,7 +56,7 @@ Le terminal standard est configuré pour fonctionner directement avec `git`.
 
 
 
-## Le contenu du dépôt
+### Le contenu du dépôt
 
 Le dossier `Python` cloné à l'étape précédente, contient l'ensemble des ressources nécessaires pour suivre ce cours.
 
@@ -67,11 +66,11 @@ Le dossier `Python` cloné à l'étape précédente, contient l'ensemble des res
     * la version "easy" contient des informations supplémentaires sur la structuration du problème
 
 
-# Méthodologie de développement
+## Méthodologie de développement
 
 Le travail de développement se fait sur une machine locale (dans le répertoire `Python` créé lors de l'opération de clonage) avec un terminal et un éditeur de texte ([Visual Studio Code](https://code.visualstudio.com/download)). Suivant le système d'exploitation utilisé, il faudra démarrer un terminal spécifique (Windows) ou non (Linux).
 
-### Windows
+#### Windows
 
 Nous travaillons dans l'environnement Anaconda. Il est installé sur les machines Windows de l'ESIEE et disponible au téléchargement [ici](https://www.anaconda.com/download/) pour vos machines personnelles.
 
@@ -88,7 +87,7 @@ L'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download)
     $ code
     $
 
-### Linux
+#### Linux
 
 Le terminal classique convient. L'interpréteur Python 3.7 se lance avec la commande `python3`:
 
@@ -102,11 +101,11 @@ Attention la commande `python` lance une version obsolète de Python
     
 L'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download) est démarré depuis le bureau Linux.
 
-## Coder
+### Coder
 
 Quel que soit l'OS choisi (Windows ou Linux), Le travail peut s'effectuer entièrement dans l'environnement [Visual Studio Code](https://code.visualstudio.com/download).
 
-### Ouvrir le répertoire de travail
+#### Ouvrir le répertoire de travail
 
 Ouvrir le dossier `Python` qui contient les ressources nécessaires pour ce cours avec la commande `Open Folder...`. Au démarrage, ce répertoire est un clone de votre repo distant (https://git.esiee.fr/<YOUR_GIT_NAME>/Python). Il contiendra par la suite le travail réalisé dans le cadre de ce cours. 
 
@@ -114,7 +113,7 @@ Vous pouvez utiliser `git`, depuis le terminal ou depuis Visual Studio Code, pou
 
 ![Ouvrir le répertoire de travail](_images/openfolder.png)
 
-### Le terminal intégré
+#### Le terminal intégré
 
 Visual Studio Code dispose d'un terminal intégré, que l'on fait apparaître ou disparaître dans le menu Afficher.
 
@@ -133,15 +132,15 @@ Une erreur courante est d'entrer des commandes Python dans un terminal (Windows 
 
 ![Python](_images/python.png)
 
-## Synchroniser son travail avec le repo distant
+### Synchroniser son travail avec le repo distant
 
 Tout au long du cours vous pouvez être amenés à utiliser plusieurs machines de développement (des machines différentes dans les salles de l’ESIEE, votre machine personnelle, etc...). Si vous maintenez la synchronisation entre repo distant et repo local, vous pourrez disposer à tout moment de la dernière version de votre travail.
 
-### Au début de la séance
+#### Au début de la séance
 
 Au début de chaque nouvelle séance, on récupére les modifications depuis le repo distant : `git pull`
 
-### A la fin de la séance
+#### A la fin de la séance
 
 A la fin de chaque nouvelle séance:
 
