@@ -1,5 +1,7 @@
 # L'environnement de travail
 
+[[_TOC_]]
+
 Ce dépôt contient une les ressources additionnelles (exercices, données) qui accompagnent [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), ainsi qu'une méthodologie de développement.
 
 Pour faciliter le développement du code informatique, il est important (entre autres) de disposer :
@@ -74,8 +76,7 @@ Le travail de développement se fait sur une machine locale (dans le répertoire
 
 Nous travaillons dans l'environnement Anaconda. Il est installé sur les machines Windows de l'ESIEE et disponible au téléchargement [ici](https://www.anaconda.com/download/) pour vos machines personnelles.
 
-Pour disposer de l'ensemble de l'environnement Anaconda, il faut démarrer un terminal Anaconda Prompt (menu "Démarrer" de Windows).
-Toutes les commandes Windows sont disponibles. Attention, un terminal classique (`cmd`) ne dispose pas de toutes les variables d'environnement nécessaires pour permettre l'utilisation de l'environnement Anaconda.
+Pour disposer de l'ensemble de l'environnement Anaconda, **il faut démarrer un terminal Anaconda Prompt** (menu "Démarrer" de Windows). Toutes les commandes Windows sont disponibles. Attention, un terminal classique (`cmd`) ne dispose pas de toutes les variables d'environnement nécessaires pour permettre l'utilisation de l'environnement Anaconda.
 
 Dans ce terminal, l'interpréteur Python 3.7 se lance avec la commande `python`:
 
@@ -147,4 +148,44 @@ A la fin de chaque nouvelle séance:
 - on ajoute les fichiers du répertoire à l'index : `git add .`
 - on enregistre les modifications dans le repo local : `git commit -m "Travail effectué lors de la première séance"`. L'idée générale est de faire un commit à chaque étape logique du travail. Par exemple à la fin de chaque séance de TP...
 - on pousse les modifications de la machine locale vers le repo distant : `git push origin master`
+
+
+### Environnement virtuel
+
+Dans un environnement complexe, où des conflits de versions de packages peuvent apparaître, il est possible de mettre en oeuvre le concept d'environnement virtuel. On utilisera alors de préférence `pipenv <https://github.com/pypa/pipenv>`_ qui permet de créer des environnements isolés et reproductibles.
+
+### Ajouter des packages
+
+Bien que l'environnement Anaconda soit assez complet, il sera parfois nécessaire d'installer des modules additionnels. La procédure est assez similaire quel que soit le système d'exploitation et utilisera l'utilitaire `pip <https://pip.pypa.io/en/stable/>`_, l'installateur de package de Python.
+
+#### Windows
+
+On installera les packages additionnels depuis le terminal `Anaconda Prompt`:
+
+    $ pip install un_package
+    Collecting un_package
+    [...]
+    Successfully installed [...]
+
+Si l'installation s'est correctement déroulée, l'importation du module doit être possible:
+
+    $ python
+    Python 3.7.3 (default, Apr 24 2019, 15:29:51) [MSC v.1915 64 bit (AMD64)] :: Anaconda, Inc. on win32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import un_package
+    >>> 
+
+#### Linux
+
+Sous Linux:
+
+    $ pip3 install un_package
+    Collecting un_package
+    [...]
+    Successfully installed [...]
+
+
+
+
+
 

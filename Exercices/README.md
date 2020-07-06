@@ -152,7 +152,7 @@ Lancement des tests:
 
 ## 8 - Les fichiers
 
-L'exercice d'application ci dessous correspond au chapitre [Les fichiers](https://perso.esiee.fr/~courivad/Python/09-files.html).
+L'exercice d'application ci dessous correspond au chapitre [Les fichiers](https://perso.esiee.fr/~courivad/Python/08-files.html).
 
 Ecrire la fonction `extract_temp()` qui prend en argument une date au format `AAAAMMJJ`, un code de station météo parmi ceux disponibles dans la liste des stations météo (`Data/stations-meteo.csv`) et retourne une liste des températures.
 
@@ -180,7 +180,7 @@ Quelques indications:
 
 ## 9 - Les sets
 
-L'exercice d'application ci dessous correspond au chapitre [Les sets](https://perso.esiee.fr/~courivad/Python/08-sets.html).
+L'exercice d'application ci dessous correspond au chapitre [Les sets](https://perso.esiee.fr/~courivad/Python/09-sets.html).
 
 Modifier la seule instruction return de la fonction `searchext()` de l’exercice d’application sur les listes pour que la liste des extensions retournée ne contienne chaque extension qu'une et une seule fois.
 
