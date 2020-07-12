@@ -2,7 +2,7 @@
 
 [[_TOC_]]
 
-Ce dépôt contient une les ressources additionnelles (exercices, données) qui accompagnent [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), ainsi qu'une méthodologie de développement.
+Ce dépôt contient les ressources additionnelles (exercices, données) qui accompagnent [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), ainsi qu'une méthodologie de développement.
 
 Pour faciliter le développement du code informatique, il est important (entre autres) de disposer :
 
@@ -17,7 +17,12 @@ Les machines de l'ESIEE (Windows et Linux) disposent du système [git](https://f
 
 ## Les ressources additionnelles
 
-Pour suivre pleinement [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), des ressources additionnelles sont requises. Il s'agit des données utilisées pour les exemples et les exercices, ainsi que le squelette des exercices d’application.
+Pour suivre pleinement [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), des ressources additionnelles sont requises. Il s'agit des données utilisées pour les exercices, ainsi que le squelette des exercices d’application :
+
+- Le dossier `data` contient les données nécessaires pour faire certains exercices.
+- Le dossier `exercices` contient les squelettes de fichier, lorsque vous devez en utiliser. En deux versions:
+    - la version "normale" ne contient que la signature des fonctions et les doctests associés
+    - la version "easy" contient des informations supplémentaires sur la structuration du problème
 
 Ces ressources sont disponibles sur ce dépôt (https://git.esiee.fr/courivad/Python). La procédure qui suit va vous permettre de récupérer ces ressources dans votre environnement personnel.
 
@@ -56,16 +61,6 @@ Le terminal standard est configuré pour fonctionner directement avec `git`.
 - placez vous dans votre répertoire de travail. Sur une machine de l'ESIEE, vous vous trouvez automatiquement dans votre espace réseau
 - clonez votre repo distant : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python`
 
-
-
-### Le contenu du dépôt
-
-Le dossier `Python` cloné à l'étape précédente, contient l'ensemble des ressources nécessaires pour suivre ce cours.
-
-* Le dossier `Data` contient les données utilisées pour les exemples du cours et celles nécessaires pour faire certains exercices.
-* Le dossier `Exercices` contient des squelettes de fichier pour faire certains exercices. En deux versions:
-    * la version "normale" ne contient que la signature des fonctions et les doctests associés
-    * la version "easy" contient des informations supplémentaires sur la structuration du problème
 
 
 ## Méthodologie de développement

@@ -5,7 +5,9 @@ Vous trouverez ici les exercices d'application permettant de valider les connais
 
 ## 3 - Contrôle de l'exécution d'un programme
 
-L'exercice d'application ci dessous correspond au chapitre [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/Python/03-controle.html).
+Les exercices d'application ci dessous correspondent au chapitre [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/Python/03-controle.html).
+
+### Nombres premiers
 
 Les nombres premiers ne sont divisibles que par 1 et eux mêmes. Ecrivez le code permettant d’afficher la vérité de " `p` est un nombre premier ".
 
@@ -24,7 +26,7 @@ L’affichage doit ressembler à:
     $ python ex03.py
     733  : True
     
-### Si le temps le permet
+### Suites de Syracuse
 
 On peut définir quelques métriques pour les suites de Syracuse:
 
@@ -42,11 +44,13 @@ Ecrivez le code permettant de rechercher:
 
 L'exercice d'application ci dessous correspond au chapitre [Fonctions et modules](https://perso.esiee.fr/~courivad/Python/04-fonctions.html).
 
+### Encapsulation de code
+
 Encapsuler dans une fonction booléenne `est_premier()` le code correspondant à l’exercice d’application du chapitre [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/Python/03-controle.html). Ajouter une docstring et des doctest. Vérifier que les tests passent et que la fonction `help()` donne bien le résultat attendu.
 
 Utiliser la fonction `est_premier()` pour rechercher les `n` premiers nombres premiers.
 
-### Si le temps le permet
+### Théorie des nombres
 
 Utiliser la fonction `est_premier()` pour rechercher:
 
@@ -59,6 +63,8 @@ Utiliser la fonction `est_premier()` pour rechercher:
 ## 5 - Les chaines de caractères
 
 Les exercices d'application ci dessous correspondent au chapitre [Chaines de caractères](https://perso.esiee.fr/~courivad/Python/05-chaines.html).
+
+### Palindromes
 
 Un palindrome est un mot ou une phrase qui se lit indifféremment de droite à gauche et de gauche à droite. Ecrire une fonction `pal()` permettant d’effectuer ce test (les espaces seront ignorés et minuscule et majuscules seront considérées comme identiques).
 
@@ -78,7 +84,7 @@ Une fois la fonction `pal()` opérationnelle pour un argument, ET SEULEMENT DANS
 
 Une version plus élaborée pourrait traiter le cas des caractères accentués et de la ponctuation.
 
-### Si le temps le permet
+### Robustesse d'un mot de passe
 
 Ecrire la fonction `check_password()` permettant de tester la robustesse d’un mot de passe. Le mot de passe est considéré comme fort si:
 
@@ -121,13 +127,11 @@ Ecrire une fonction `guess_language()` qui prend en argument une string contenan
 
 Pour tester le bon fonctionnement, les chaînes de caractères LCELR, IF, POEMAXX et GOETHE contiennent des textes dans chacune des langues considérées.
 
-### Si le temps le permet
-
-#### Nombre de Harshad
+### Nombre de Harshad
 
 En mathématiques récréatives, un nombre Harshad est un entier naturel qui est divisible par la somme de ses chiffres dans une base donnée. Ecrire la fonction `is_harshad()` permettant de vérifier si un entier `n` (base 10) passé en paramètre est un nombre de Harshad ou pas. La fonction doit retourner un booléen. Vous écrirez également les doctests associés. Afficher les nombres de Harshad jusqu’à 100.
 
-#### Nombre heureux
+### Nombre heureux
 
 Un entier naturel est un nombre heureux si, lorsqu’on calcule la somme des carrés de ses chiffres dans son écriture en base 10 puis la somme des carrés des chiffres du nombre obtenu et ainsi de suite, on aboutit au nombre 1. Ecrire la fonction récursive `is_happy()` permettant de vérifier si un entier `n` passé en paramètre est un nombre heureux ou pas. La fonction doit retourner un booléen. Vous écrirez également les doctests associés. Afficher les nombres heureux jusqu’à 100.
 
@@ -154,7 +158,7 @@ Lancement des tests:
 
 L'exercice d'application ci dessous correspond au chapitre [Les fichiers](https://perso.esiee.fr/~courivad/Python/08-files.html).
 
-Ecrire la fonction `extract_temp()` qui prend en argument une date au format `AAAAMMJJ`, un code de station météo parmi ceux disponibles dans la liste des stations météo (`Data/stations-meteo.csv`) et retourne une liste des températures.
+Ecrire la fonction `extract_temp()` qui prend en argument une date au format `AAAAMMJJ`, un code de station météo parmi ceux disponibles dans la liste des stations météo (`data/stations-meteo.csv`) et retourne une liste des températures.
 
 Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex09.py`. En cas de difficulté, le fichier `ex09-easy.py` contient des renseignements supplémentaires. 
 
@@ -169,7 +173,7 @@ Une fois la fonction `extract_temp()` opérationnelle pour un argument, ET SEULE
 
 Quelques indications:
 
-- le fichier `Data/meteofrance2014.zip` contient les observations météorologiques en France pour l’année 2014, et l’explication des variables se trouve [sur ce lien](https://donneespubliques.meteofrance.fr/client/document/doc_parametres_synop_168.pdf).
+- le fichier `data/meteofrance2014.zip` contient les observations météorologiques en France pour l’année 2014, et l’explication des variables se trouve [sur ce lien](https://donneespubliques.meteofrance.fr/client/document/doc_parametres_synop_168.pdf).
 - le module `zipfile` permet la manipulation des fichiers compressés. En particulier la méthode `namelist()` permet de lister le contenu de l’archive.
 - lorsqu’on travaille avec une archive, la fonction `csv.reader()` n’est pas disponible. Il faut utiliser la méthode `read()` qui retourne une séquence de bytes.
 - cette séquence de bytes est convertie en `str` avec la méthode `decode()`.
@@ -180,13 +184,15 @@ Quelques indications:
 
 ## 9 - Les sets
 
-L'exercice d'application ci dessous correspond au chapitre [Les sets](https://perso.esiee.fr/~courivad/Python/09-sets.html).
+Les exercices d'application ci dessous correspond au chapitre [Les sets](https://perso.esiee.fr/~courivad/Python/09-sets.html).
 
-Modifier la seule instruction return de la fonction `searchext()` de l’exercice d’application sur les listes pour que la liste des extensions retournée ne contienne chaque extension qu'une et une seule fois.
+### Propriété des set
+
+Modifier la seule instruction `return` de la fonction `searchext()` de l’exercice d’application sur les listes pour que la liste des extensions retournée ne contienne chaque extension qu'une et une seule fois.
 
 ### Les mots de Molière
 
-Les fichiers `Data/avare.txt` et `Data/bourgeois-gentilhomme.txt` contiennent deux célèbres pièces de théatre de Molière. Rechercher les mots communs à ces deux pièces. Ceux qui ne sont présents que dans l'une et pas dans l'autre...
+Les fichiers `data/avare.txt` et `data/bourgeois-gentilhomme.txt` contiennent deux célèbres pièces de théatre de Molière. Rechercher les mots communs à ces deux pièces. Ceux qui ne sont présents que dans l'une et pas dans l'autre...
 
 Pour cet exercice, aucun squelette n'est fourni. Une fois le code opérationnel, vous devez mettre en place les doctest associés.
 
@@ -195,13 +201,13 @@ Pour cet exercice, aucun squelette n'est fourni. Une fois le code opérationnel,
 
 L'exercice d'application ci dessous correspond au chapitre [Les dictionnaires](https://perso.esiee.fr/~courivad/Python/10-dict.html).
 
-Le fichier `../Data/stations-meteo.csv` contient la liste des stations d’observation de Météo France et un certain nombre d’informations s’y rapportant. Ecrire la fonction `build_stations_dict()` prenant en argument le fichier `csv` précédent et retournant un dictionnaire dont la clé est le nom de la station et la valeur un `namedtuple()` contenant l’ID, la latitude, la longitude et l’altitude de la station. Les tuples nommés ont été présentés au chapitre [Les tuples](https://perso.esiee.fr/~courivad/Python/07-tuples.html).
+Le fichier `../data/stations-meteo.csv` contient la liste des stations d’observation de Météo France et un certain nombre d’informations s’y rapportant. Ecrire la fonction `build_stations_dict()` prenant en argument le fichier `csv` précédent et retournant un dictionnaire dont la clé est le nom de la station et la valeur un `namedtuple()` contenant l’ID, la latitude, la longitude et l’altitude de la station. Les tuples nommés ont été présentés au chapitre [Les tuples](https://perso.esiee.fr/~courivad/Python/07-tuples.html).
 
 Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex10.py`. En cas de difficulté, le fichier `ex10-easy.py` contient des renseignements supplémentaires. 
 
 Vous devez écrire le code de la fonction `build_stations_dict()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte.
 
-A chaque modification de `build_stations_dict()`, tester son fonctionnement dans la fonction `main()` en l''appelant avec un argument particulier et en affichant la valeur de retour.
+A chaque modification de `build_stations_dict()`, tester son fonctionnement dans la fonction `main()` en l'appelant avec un argument particulier et en affichant la valeur de retour.
 
 Lancement des tests:
 
@@ -211,6 +217,8 @@ Lancement des tests:
 ## 11 - Les exceptions
 
 L'exercice d'application ci dessous correspond au chapitre [Les exceptions](https://perso.esiee.fr/~courivad/Python/11-exceptions.html).
+
+### Conversion de type
 
 Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex11.py`. En cas de difficulté, le fichier `ex11-easy.py` contient des renseignements supplémentaires.
 
@@ -286,7 +294,7 @@ Ecrire le code de la fonction `scrap_imdb()` qui a pour rôle d’instancier la 
 
 Ecrire le code de la fonction `main()` qui a pour rôle d’appeler la fonction `scrap_imdb()` sur une ressource distante (IMDb). Vous mettrez en oeuvre le traitement d’exception pour traiter élégamment l’éventualité d’une ressource réseau indisponible.
 
-Une fois la fonction main() opérationnelle, lancer les doctests. Le fichier `Data/IMDb.html` doit être présent dans le répertoire.
+Une fois la fonction main() opérationnelle, lancer les doctests. Le fichier `data/IMDb.html` doit être présent dans le répertoire.
 
 - Windows : `python -m doctest ex13.py -v`
 - Linux : `python3 -m doctest ex13.py -v`
@@ -295,12 +303,8 @@ Une fois la fonction main() opérationnelle, lancer les doctests. Le fichier `Da
 
 L'exercice d'application ci dessous correspond au chapitre [Géolocatisation](https://perso.esiee.fr/~courivad/Python/15-geo.html).
 
-La population totale de la commune est une donnée importante mais elle ne reflète pas complètement l’urbanisation du territoire. La densité de population serait une grandeur plus intéressante dans ce cas. La surface de chacune des communes est une donnée manquante. Il faut soit la rechercher dans une source de données différente, ou la calculer à partir des coordonnées du polygone correspondant. Evaluer rapidement la complexité des deux approches. Mettre en oeuvre celle qui vous semble la plus simple.
+La population totale de la commune est une donnée importante mais elle ne reflète pas complètement l’urbanisation du territoire. La densité de population serait une grandeur plus intéressante dans ce cas. La surface de chacune des communes est une donnée qui n'apparait pas dans les datasets utilisés dans le cours.. 
 
-Les communes sont identifiées par leur code INSEE et leur nom. L’exemple ci dessus utilise le code INSEE. Ecrire le code permettant d’effectuer l’opération avec le nom de la commune. Vérifier la validité du processus en comparant la carte obtenue à celle donnée ci dessus. Y a t-il des données manquantes ? Le cas échéant, à quoi est ce dû ? Pouvez vous proposer une solution satisfaisante ?
+On pourrait imaginer la calculer à partir des coordonnées du polygone correspondant. Mais cette opération est complexe (voir [l'algorithme du lacet](https://en.wikipedia.org/wiki/Shoelace_formula)).
 
-
-
-
-
-
+On peut également la rechercher dans une source de données différente. Utiliser ce [dataset](https://public.opendatasoft.com/explore/dataset/correspondance-code-insee-code-postal/table/) pour produire une carte choroplèthe de la densité de population des communes françaises.
