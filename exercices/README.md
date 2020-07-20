@@ -73,8 +73,7 @@ Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le
 Vous devez écrire le code de la fonction `pal()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte.
 
 ---
-**Note:**
-ce problème peut être résolu à "bas niveau" in itérant sur les caractères ou à plus "haut niveau" en utilisant les méthodes spécifiques aux chaines de caractères. La deuxième approche, plus *pythonique* est à privilégier.
+Note : ce problème peut être résolu à "bas niveau" en itérant sur les caractères ou à plus "haut niveau" en utilisant les méthodes spécifiques aux chaines de caractères. La deuxième approche, plus *pythonique* est à privilégier.
 ---
 
 A chaque modification de `pal()`, tester son fonctionnement dans la fonction `main()` en appelant `pal()` pour un argument particulier et en affichant la valeur de retour. Jeter un oeil aux doctests de la fonction pour avoir un exemple d’appel et d’utilisation de la valeur de retour.
@@ -181,8 +180,7 @@ Quelques indications:
 - cette séquence de bytes est convertie en `str` avec la méthode `decode()`.
 
 ---
-**Note:**
-la liste ne permet pas une performance algorithmique optimale. La structure de données la plus appropriée à ce type de problème est le dictionnaire que nous verrons au chapitre suivant.
+Note : la liste ne permet pas une performance algorithmique optimale. La structure de données la plus appropriée à ce type de problème est le dictionnaire que nous verrons au chapitre suivant.
 ---
 
 
