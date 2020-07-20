@@ -179,9 +179,7 @@ Quelques indications:
 - lorsqu’on travaille avec une archive, la fonction `csv.reader()` n’est pas disponible. Il faut utiliser la méthode `read()` qui retourne une séquence de bytes.
 - cette séquence de bytes est convertie en `str` avec la méthode `decode()`.
 
----
-Note : la liste ne permet pas une performance algorithmique optimale. La structure de données la plus appropriée à ce type de problème est le dictionnaire que nous verrons au chapitre suivant.
----
+> Note : la liste ne permet pas une performance algorithmique optimale. La structure de données la plus appropriée à ce type de problème est le dictionnaire que nous verrons dans un autre chapitre.
 
 
 ## 9 - Les sets
@@ -223,11 +221,16 @@ Combien y a t-il de mots avec un ``z`` en position non terminale, contenant éga
 
 Combien y a t-il de mots avec un ``z`` en position non terminale, contenant également un ``k`` ?
 
+Aucun doctest n'est fourni. Ecrivez en quelques un. Pour les lancer:
+
+- Windows : `python -m doctest ex09.py -v`
+- Linux : `python3 -m doctest ex09.py -v`
+
 ## 10 - Les dictionnaires
 
 L'exercice d'application ci dessous correspond au chapitre [Les dictionnaires](https://perso.esiee.fr/~courivad/Python/10-dict.html).
 
-Le fichier `../data/stations-meteo.csv` contient la liste des stations d’observation de Météo France et un certain nombre d’informations s’y rapportant. Ecrire la fonction `build_stations_dict()` prenant en argument le fichier `csv` précédent et retournant un dictionnaire dont la clé est le nom de la station et la valeur un `namedtuple()` contenant l’ID, la latitude, la longitude et l’altitude de la station. Les tuples nommés ont été présentés au chapitre [Les tuples](https://perso.esiee.fr/~courivad/Python/07-tuples.html).
+Le fichier `data/stations-meteo.csv` contient la liste des stations d’observation de Météo France et un certain nombre d’informations s’y rapportant. Ecrire la fonction `build_stations_dict()` prenant en argument le fichier `csv` précédent et retournant un dictionnaire dont la clé est le nom de la station et la valeur un `namedtuple()` contenant l’ID, la latitude, la longitude et l’altitude de la station. Les tuples nommés ont été présentés au chapitre [Les tuples](https://perso.esiee.fr/~courivad/Python/07-tuples.html).
 
 Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex10.py`. En cas de difficulté, le fichier `ex10-easy.py` contient des renseignements supplémentaires. 
 
@@ -290,9 +293,6 @@ Créer une classe `Vector2D` possédant 2 attributs `x` et `y` qui représentent
 - redéfinir la méthode `__sub__()` afin que l’opérateur de soustraction `-` puisse fonctionner.
 
 Une fois la classe Vector2D opérationnelle pour une instance, vérifier la bonne exécution des doctests.
-
-- Windows : `python -m doctest ex12.py -v`
-- Linux : `python3 -m doctest ex12.py -v`
 
 ## 13 - Internet
 
