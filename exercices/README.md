@@ -72,8 +72,10 @@ Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le
 
 Vous devez écrire le code de la fonction `pal()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte.
 
-NOTE: **Note:**
+---
+**Note:**
 ce problème peut être résolu à "bas niveau" in itérant sur les caractères ou à plus "haut niveau" en utilisant les méthodes spécifiques aux chaines de caractères. La deuxième approche, plus *pythonique* est à privilégier.
+---
 
 A chaque modification de `pal()`, tester son fonctionnement dans la fonction `main()` en appelant `pal()` pour un argument particulier et en affichant la valeur de retour. Jeter un oeil aux doctests de la fonction pour avoir un exemple d’appel et d’utilisation de la valeur de retour.
 
@@ -178,8 +180,10 @@ Quelques indications:
 - lorsqu’on travaille avec une archive, la fonction `csv.reader()` n’est pas disponible. Il faut utiliser la méthode `read()` qui retourne une séquence de bytes.
 - cette séquence de bytes est convertie en `str` avec la méthode `decode()`.
 
-NOTE: **Note:**
+---
+**Note:**
 la liste ne permet pas une performance algorithmique optimale. La structure de données la plus appropriée à ce type de problème est le dictionnaire que nous verrons au chapitre suivant.
+---
 
 
 ## 9 - Les sets
@@ -199,7 +203,7 @@ Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le
 
 Construire une **liste** de ces mots à partir d'une *list comprehension*. 
 
-Attention, pour un affichage ligne par ligne, les mots contenus dans le fichier sont suivis d'un caractère spécial `\n` qu'il conviendra de retirer. Pour effectuer cette opération, on recherchera une (méthode de chaine de caractère)[https://docs.python.org/3.7/library/stdtypes.html#string-methods] adaptée.
+Attention, pour un affichage ligne par ligne, les mots contenus dans le fichier sont suivis d'un caractère spécial `\n` qu'il conviendra de retirer. Pour effectuer cette opération, on recherchera une [méthode de chaine de caractère](https://docs.python.org/3.7/library/stdtypes.html#string-methods) adaptée.
 
 A partir de cette liste, rechercher les mots en position 24499, 28281, 57305, 118091, 199316, 223435, 336455. Ca devrait vous faire penser à un célèbre personnage de bande dessinée.
 
@@ -220,16 +224,6 @@ Combien y a t-il de mots contenant un ``z`` ? Commençant par un ``z`` ? Termina
 Combien y a t-il de mots avec un ``z`` en position non terminale, contenant également un ``k`` ?
 
 Combien y a t-il de mots avec un ``z`` en position non terminale, contenant également un ``k`` ?
-
-
-
-
-### Les mots de Molière
-
-Les fichiers  et `data/bourgeois-gentilhomme.txt` contiennent deux célèbres pièces de théatre de Molière. Rechercher les mots communs à ces deux pièces. Ceux qui ne sont présents que dans l'une et pas dans l'autre...
-
-Pour cet exercice, aucun squelette n'est fourni. Une fois le code opérationnel, vous devez mettre en place les doctest associés.
-
 
 ## 10 - Les dictionnaires
 
