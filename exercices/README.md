@@ -54,7 +54,7 @@ Utiliser la fonction `est_premier()` pour rechercher les `n` premiers nombres pr
 
 Utiliser la fonction `est_premier()` pour rechercher:
 
-- le premier nombre de Fermat $`2^{2^n+1}`$ qui n’est pas premier.
+- le premier nombre de Fermat $`2^{2^n}+1`$ qui n’est pas premier.
 - le premier nombre premier après un entier `n` donné. Quel est le premier nombre premier après `n = 100000` ?
 - le premier couple de nombres premiers jumeaux après un entier `n` donné (`p` et `p'` sont des nombres premiers jumeaux si `p` et `p'` sont premiers et si `p'-p = 2`). Quel est le premier couple de nombres premiers jumeaux après `n = 100000` ?
 - le premier nombre premier de Germain après un entier `n` donné (un entier `p` est un nombre premier de Germain si `p` et `2p+1` sont premiers). Quel est le premier nombre premier de Germain après `n = 100000` ?
@@ -161,7 +161,7 @@ L'exercice d'application ci dessous correspond au chapitre [Les fichiers](https:
 
 Ecrire la fonction `extract_temp()` qui prend en argument une date au format `AAAAMMJJ`, un code de station météo parmi ceux disponibles dans la liste des stations météo (`data/stations-meteo.csv`) et retourne une liste des températures.
 
-Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex09.py`. En cas de difficulté, le fichier `ex09-easy.py` contient des renseignements supplémentaires. 
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex08.py`. En cas de difficulté, le fichier `ex08-easy.py` contient des renseignements supplémentaires. 
 
 Vous devez écrire le code de la fonction `extract_temp()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte.
 
