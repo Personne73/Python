@@ -77,20 +77,22 @@ Nous travaillons dans l'environnement Anaconda. Il est installé sur les machine
 
 Pour disposer de l'ensemble de l'environnement Anaconda, **il faut démarrer un terminal Anaconda Prompt** (menu "Démarrer" de Windows). Toutes les commandes Windows sont disponibles. Attention, un terminal classique (`cmd`) ne dispose pas de toutes les variables d'environnement nécessaires pour permettre l'utilisation de l'environnement Anaconda.
 
-Dans ce terminal, l'interpréteur Python 3.7 se lance avec la commande `python`:
+Dans ce terminal, l'interpréteur Python se lance avec la commande `python`:
 
     $ python --version
-    Python 3.7.x
+    Python 3.8.x
     
 
 #### Linux
 
-Le terminal classique convient. L'interpréteur Python 3.7 se lance directement avec la commande `python3`:
+Le terminal classique convient. L'interpréteur Python se lance directement avec la commande `python3`:
 
     $ python3 --version
-    Python 3.7.x
+    Python 3.8.x
+
+La version de Python peut varier selon la distribution.
     
-Attention la commande `python` lance une version obsolète de Python
+Attention, sur certaines distributions, la commande `python` lance une version obsolète de Python
     
     $ python --version
     Python 2.7.x
@@ -167,6 +169,17 @@ A la fin de chaque nouvelle séance:
 - on enregistre les modifications dans le repo local : `git commit -m "Travail effectué lors de la première séance"`. L'idée générale est de faire un commit à chaque étape logique du travail. Par exemple à la fin de chaque séance de TP...
 - on pousse les modifications de la machine locale vers le repo distant : `git push origin master`
 
+### Ressources Git
+
+Git est un système de développement logiciel et de versionning puissant, mais sa maitrise avancée nécessite du temps d'apprentissage et de l'expérience. Ci dessous quelques ressources pour approfondir les choses :
+
+- [GIT Workflow - Georgia Tech - Software Development Process](https://www.youtube.com/watch?v=3a2x1iJFJWc)
+- [Introduction à Git (IUT Lyon 1)](https://perso.liris.cnrs.fr/pierre-antoine.champin/enseignement/intro-git/)
+- [Gérez vos codes source avec Git (Open Classroom)](https://openclassrooms.com/fr/courses/1233741-gerez-vos-codes-source-avec-git)
+- [git - petit guide](https://rogerdudler.github.io/git-guide/index.fr.html)
+- [Visualizing Git Concepts with D3](https://onlywei.github.io/explain-git-with-d3)
+- [Learn Git Branching](https://learngitbranching.js.org/)
+- [A Visual Git Reference](http://marklodato.github.io/visual-git-guide/index-en.html)
 
 ### Environnement virtuel
 
