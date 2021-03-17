@@ -64,6 +64,23 @@ Utiliser la fonction `est_premier()` pour rechercher:
 
 Les exercices d'application ci dessous correspondent au chapitre [Chaines de caractères](https://perso.esiee.fr/~courivad/Python/05-chaines.html).
 
+### Un peu de récursivité
+
+Selon [Wikipedia](https://fr.wikipedia.org/wiki/Algorithme_r%C3%A9cursif), un algorithme récursif "est un algorithme qui résout un problème en calculant des solutions d'instances plus petites du même problème".
+
+Pour illustrer ce concept, on cherche à réaliser un algorithme qui retire les voyelles d'une chaîne de caractères ASCII (pour garder l'essentiel de la démarche, on ne traite pas ici le cas des lettres accentuées).
+
+Une version itérative de l'algorithme :
+
+	def remove_vowels_it(s):
+		out = ""
+		for c in s:
+			if c in "aeiouy": continue
+			out += c
+		return out
+		
+Ecrire une version récursive de cet algorithme.
+
 ### Palindromes
 
 Un palindrome est un mot ou une phrase qui se lit indifféremment de droite à gauche et de gauche à droite. Ecrire une fonction `pal()` permettant d’effectuer ce test (les espaces seront ignorés et minuscule et majuscules seront considérées comme identiques).
