@@ -1,222 +1,337 @@
-# L'environnement de travail
+# Exercices d'application
 
-[[_TOC_]]
+Vous trouverez ici les exercices d'application permettant de valider les connaissances du [cours Python](https://perso.esiee.fr/~courivad/Python).
 
-Ce dépôt contient les ressources additionnelles (exercices, données) qui accompagnent [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), ainsi qu'une méthodologie de développement.
+L'environnement d'apprentissage est décrit [ici](https://perso.esiee.fr/~courivad/env.html) et la méthodologie de développement [là](https://perso.esiee.fr/~courivad/meth.html).
 
-Pour faciliter le développement du code informatique, il est important (entre autres) de disposer :
+## 3 - Contrôle de l'exécution d'un programme
 
-- d’un endroit centralisé hébergeant le travail déjà réalisé
-- d’un système de versionnage permettant d’archiver différentes étapes du travail
+Les exercices d'application ci dessous correspondent au chapitre [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/Python/03-controle.html).
 
-Dans le cadre de ce cours nous utiliserons le système [git](https://fr.wikipedia.org/wiki/Git). Pour une présentation (un peu) approfondie, on peut utiliser [le tutoriel OpenClassrooms](https://openclassrooms.com/fr/courses/1233741-gerez-vos-codes-source-avec-git).
+### Nombres premiers
 
-L'ESIEE a déployé un serveur GitLab et vous disposez d'un compte sur la plateforme https://git.esiee.fr/. La connexion se fait avec vos identifiants habituels.
+Les nombres premiers ne sont divisibles que par 1 et eux mêmes. Ecrivez le code permettant d’afficher la vérité de " `p` est un nombre premier ".
 
-Les machines de l'ESIEE (Windows et Linux) disposent du système [git](https://fr.wikipedia.org/wiki/Git).
+Pour rechercher (naïvement) si un nombre `p` est premier:
 
-## Les ressources additionnelles
+- POUR chaque diviseur `d` parmi les valeurs `2` et les valeurs impaires inférieures à $`\sqrt{p}`$ (vérifier que ça suffit sur un exemple)
+    - on effectue la division entière de `p` par `d`
+    - SI le reste est nul, ALORS le nombre n’est pas premier et on interrompt le parcours de la boucle en affichant False
+- FIN POUR
+- Sinon, il est premier et on affiche True
 
-Pour suivre pleinement [le cours Python](https://perso.esiee.fr/~courivad/Python/index.html), des ressources additionnelles sont requises. Il s'agit des données utilisées pour les exercices, ainsi que le squelette des exercices d’application :
+L’affichage doit ressembler à:
 
-- Le dossier `data` contient les données nécessaires pour faire certains exercices.
-- Le dossier `exercices` contient les squelettes de fichier, lorsque vous devez en utiliser. En deux versions:
-    - la version "normale" ne contient que la signature des fonctions et les doctests associés
-    - la version "easy" contient des informations supplémentaires sur la structuration du problème
-
-Ces ressources sont disponibles sur ce dépôt (https://git.esiee.fr/courivad/Python). La procédure qui suit va vous permettre de récupérer ces ressources dans votre environnement personnel.
-
-### Forker le projet initial
-
-Le dépôt (https://git.esiee.fr/courivad/Python) ne vous appartient pas, ce qui signifie que vous avez uniquement les droits en lecture. Vous pouvez donc uniquement le copier. C'est suffisant pour une utilisation minimale.
-
-Vous pouvez également souhaiter avoir une utilisation plus avancée et disposer de votre propre dépôt distant (avec les droits d'écriture). Vous pourrez ainsi synchroniser votre travail local avec votre propre dépôt distant et disposer ainsi dans le cloud d'une version "à jour" de votre travail. A condition bien évidemment d'effectuer les opérations de synchronisation nécessaires (ce n'est pas automatique).
-
-Le processus de copie d'un dépôt distant dans votre espace personnel distant s'appelle un "fork". Un fork est une copie complète du projet. Par la suite, cette copie sera appelée "repo distant". Vous pourrez ultérieurement ajouter, supprimer ou modifier du contenu de ce repo distant:
-
-- connectez vous [au Git ESIEE](https://git.esiee.fr/) avec vos identifiants personnels
-- rechercher le projet https://git.esiee.fr/courivad/Python
-- le forker (vous trouverez la commande quelque part sur la page du projet)
-
-Une fois cette étape effectuée, vous dsposez de la totalité des ressources nécessaires dans votre espace Git personnel (cloud).
-
-### Cloner le projet sur une machine locale
-
-Le travail de développement s'effectue sur une machine locale (votre machine personnelle ou une machine de l'ESIEE). Il faut donc copier le repo distant sur la machine de développement. C'est le processus de clonage.
-
-Sur une machine locale, on clone le projet à partir du repo distant avant de poursuivre le travail de développement. Cloner un projet c'est créer un répertoire local contenant la totalité des fichiers du repo distant. 
-
-
-#### Windows
-
-Lancez la commande `Git Bash`, qui ouvre un terminal configuré pour fonctionner avec `git`.
- 
-- placez vous dans votre répertoire de travail. Sur une machine de l'ESIEE, placez vous dans votre espace réseau (disque U:) : `cd /u`
-- clonez votre repo distant : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python`
-
-#### Linux
-
-Le terminal standard est configuré pour fonctionner directement avec `git`.
-
-- placez vous dans votre répertoire de travail. Sur une machine de l'ESIEE, vous vous trouvez automatiquement dans votre espace réseau
-- clonez votre repo distant : `git clone https://git.esiee.fr/<YOUR_GIT_NAME>/Python`
-
-
-
-## Méthodologie de développement
-
-Le travail de développement se fait sur une machine locale (dans le répertoire `Python` créé lors de l'opération de clonage) avec un terminal et un éditeur de texte ([Visual Studio Code](https://code.visualstudio.com/download)). Suivant le système d'exploitation utilisé, il faudra démarrer un terminal spécifique (Windows) ou non (Linux).
-
-### Interpréteur Python
-
-Python dispose d'un interpréteur de type REPL permettant d'exécuter rapidement quelques instructions simples.
-
-#### Windows
-
-Nous travaillons dans l'environnement Anaconda. Il est installé sur les machines Windows de l'ESIEE et disponible au téléchargement [ici](https://www.anaconda.com/download/) pour vos machines personnelles.
-
-Pour disposer de l'ensemble de l'environnement Anaconda, **il faut démarrer un terminal Anaconda Prompt** (menu "Démarrer" de Windows). Toutes les commandes Windows sont disponibles. Attention, un terminal classique (`cmd`) ne dispose pas de toutes les variables d'environnement nécessaires pour permettre l'utilisation de l'environnement Anaconda.
-
-Dans ce terminal, l'interpréteur Python se lance avec la commande `python`:
-
-    $ python --version
-    Python 3.8.x
+    $ python ex03.py
+    731  =  17 x 43  : False
+    $ python ex03.py
+    733  : True
     
+### Suites de Syracuse
 
-#### Linux
+On peut définir quelques métriques pour les suites de Syracuse:
 
-Le terminal classique convient. L'interpréteur Python se lance directement avec la commande `python3`:
+- le temps de vol : c’est le plus petit indice `k` tel que $`u_{k}=1`$. Il est de `17` pour la suite de Syracuse de source `n = 15` et de `46` pour la suite de Syracuse de source `n = 127`.
+- le temps de vol en altitude : c’est le plus petit indice `k` tel que $`u_{k+1} <= u_{0}`$. Il est de `10` pour la suite de Syracuse de source `n = 15` et de `23` pour la suite de Syracuse de source `n = 127`
+- l’altitude maximale : c’est la valeur maximale de la suite. Elle est de `160` pour la suite de Syracuse de source `n = 15` et de `4372` pour la suite de Syracuse de source `n = 127`.
 
-    $ python3 --version
-    Python 3.8.x
+Ecrivez le code permettant de rechercher:
 
-La version de Python peut varier selon la distribution.
-    
-Attention, sur certaines distributions, la commande `python` lance une version obsolète de Python
-    
-    $ python --version
-    Python 2.7.x
-    
+- l’altitude maximale d’une suite de Syracuse et la valeur maximum de l’altitude maximale des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
+- le temps de vol en altitude d’une suite de Syracuse et la valeur maximum du temps de vol des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
+- le temps de vol en altitude d’une suite de Syracuse et la valeur maximum du temps de vol en altitude des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
 
-### Coder
+## 4 - Fonctions et modules
 
-Lorsqu'on développe des programmes plus complexes, il est nécessaire de stocker les instructions à exécuter dans un fichier avec un éditeur de texte.
+L'exercice d'application ci dessous correspond au chapitre [Fonctions et modules](https://perso.esiee.fr/~courivad/Python/04-fonctions.html).
 
-Quel que soit l'OS choisi (Windows ou Linux), Le travail peut s'effectuer entièrement dans l'environnement [Visual Studio Code](https://code.visualstudio.com/download).
+### Encapsulation de code
 
-#### Windows
+Encapsuler dans une fonction booléenne `est_premier()` le code correspondant à l’exercice d’application du chapitre [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/Python/03-controle.html). Ajouter une docstring et des doctest. Vérifier que les tests passent et que la fonction `help()` donne bien le résultat attendu.
 
-L'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download) est démarré depuis le terminal Anaconda avec la commande `code`.
+Utiliser la fonction `est_premier()` pour rechercher les `n` premiers nombres premiers.
 
-    $ code
-    $
-    
-#### Linux
+### Théorie des nombres
 
-L'éditeur de texte [Visual Studio Code](https://code.visualstudio.com/download) est démarré depuis le bureau Linux.
+Utiliser la fonction `est_premier()` pour rechercher:
 
-
-### L'éditeur de texte
-
-[Visual Studio Code](https://code.visualstudio.com/download) propose une interface intégrée comprenant:
-
-- l'éditeur de texte proprement dit
-- un navigateur de fichier
-- un terminal intégré
-- et d'autres fonctionnalités facilitant la programmation
+- le premier nombre de Fermat $`2^{2^n}+1`$ qui n’est pas premier.
+- le premier nombre premier après un entier `n` donné. Quel est le premier nombre premier après `n = 100000` ?
+- le premier couple de nombres premiers jumeaux après un entier `n` donné (`p` et `p'` sont des nombres premiers jumeaux si `p` et `p'` sont premiers et si `p'-p = 2`). Quel est le premier couple de nombres premiers jumeaux après `n = 100000` ?
+- le premier nombre premier de Germain après un entier `n` donné (un entier `p` est un nombre premier de Germain si `p` et `2p+1` sont premiers). Quel est le premier nombre premier de Germain après `n = 100000` ?
 
 
-#### Ouvrir le répertoire de travail
+## 5 - Les chaines de caractères
 
-Ouvrir le dossier `Python` qui contient les ressources nécessaires pour ce cours avec la commande `Open Folder...`. Au démarrage, ce répertoire est un clone de votre repo distant (https://git.esiee.fr/<YOUR_GIT_NAME>/Python). Il contiendra par la suite le travail réalisé dans le cadre de ce cours. 
+Les exercices d'application ci dessous correspondent au chapitre [Chaines de caractères](https://perso.esiee.fr/~courivad/Python/05-chaines.html).
 
-Vous pouvez utiliser `git`, depuis le terminal ou depuis Visual Studio Code, pour maintenir la synchronisation entre votre répertoire local et votre repo distant.
+### Palindromes
 
-![Ouvrir le répertoire de travail](_images/openfolder.png)
+Un palindrome est un mot ou une phrase qui se lit indifféremment de droite à gauche et de gauche à droite. Ecrire une fonction `pal()` permettant d’effectuer ce test (les espaces seront ignorés et minuscule et majuscules seront considérées comme identiques).
 
-#### Le terminal intégré
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex05.py`. En cas de difficulté, le fichier `ex05-easy.py` contient des renseignements supplémentaires. 
 
-Visual Studio Code dispose d'un terminal intégré, que l'on fait apparaître ou disparaître dans le menu Afficher.
-
-![Ouvrir le répertoire de travail](_images/afficher-terminal.png)
-
-Ce terminal est une vue intégrée du terminal Linux ou Windows (`Anaconda Prompt`.) 
-
-![Terminal intégré](_images/terminal.png)
-
-Ce terminal intégré permet :
-
-- d'exécuter les programmes Python avec la syntaxe `python nom_du_programme.py` (Windows) ou `python3 nom_du_programme.py` (Linux).
-- de lancer l'interpréteur interactif avec la syntaxe `python` (Windows) ou `python3` (Linux) . Le prompt (l'invite de commande) de ce dernier est différent (`>>>`) et permet d'identifier la nature des commandes attendues. 
-  
-Une erreur courante est d'entrer des commandes Python dans un terminal (Windows ou Linux) ou l'inverse, des commandes Windows ou Linux dans un interpréteur Python.
-
-![Python](_images/python.png)
-
-### Synchroniser son travail avec le repo distant
-
-Tout au long du cours vous pouvez être amenés à utiliser plusieurs machines de développement (des machines différentes dans les salles de l’ESIEE, votre machine personnelle, etc...). Si vous maintenez la synchronisation entre repo distant et repo local, vous pourrez disposer à tout moment de la dernière version de votre travail.
-
-#### Au début de la séance
-
-Au début de chaque nouvelle séance, on récupére les modifications depuis le repo distant : `git pull`
-
-#### A la fin de la séance
-
-A la fin de chaque nouvelle séance:
-
-- on ajoute les fichiers du répertoire à l'index : `git add .`
-- on enregistre les modifications dans le repo local : `git commit -m "Travail effectué lors de la première séance"`. L'idée générale est de faire un commit à chaque étape logique du travail. Par exemple à la fin de chaque séance de TP...
-- on pousse les modifications de la machine locale vers le repo distant : `git push origin master`
-
-### Ressources Git
-
-Git est un système de développement logiciel et de versionning puissant, mais sa maitrise avancée nécessite du temps d'apprentissage et de l'expérience. Ci dessous quelques ressources pour approfondir les choses :
-
-- [GIT Workflow - Georgia Tech - Software Development Process](https://www.youtube.com/watch?v=3a2x1iJFJWc)
-- [Introduction à Git (IUT Lyon 1)](https://perso.liris.cnrs.fr/pierre-antoine.champin/enseignement/intro-git/)
-- [Gérez vos codes source avec Git (Open Classroom)](https://openclassrooms.com/fr/courses/1233741-gerez-vos-codes-source-avec-git)
-- [git - petit guide](https://rogerdudler.github.io/git-guide/index.fr.html)
-- [Visualizing Git Concepts with D3](https://onlywei.github.io/explain-git-with-d3)
-- [Learn Git Branching](https://learngitbranching.js.org/)
-- [A Visual Git Reference](http://marklodato.github.io/visual-git-guide/index-en.html)
-
-### Environnement virtuel
-
-Dans un environnement complexe, où des conflits de versions de packages peuvent apparaître, il est possible de mettre en oeuvre le concept d'environnement virtuel. On utilisera alors de préférence [pipenv](https://github.com/pypa/pipenv) qui permet de créer des environnements isolés et reproductibles.
-
-### Ajouter des packages
-
-Il sera parfois nécessaire d'installer des modules additionnels. La procédure est assez similaire quel que soit le système d'exploitation et utilisera l'utilitaire `pip <https://pip.pypa.io/en/stable/>`_, l'installateur de package de Python.
-
-#### Windows
-
-Bien que l'environnement Anaconda soit assez complet, on peut installer des packages additionnels depuis le terminal `Anaconda Prompt`:
-
-    $ pip install un_package
-    Collecting un_package
-    [...]
-    Successfully installed [...]
-
-Si l'installation s'est correctement déroulée, l'importation du module doit être possible:
-
-    $ python
-    Python 3.7.3 (default, Apr 24 2019, 15:29:51) [MSC v.1915 64 bit (AMD64)] :: Anaconda, Inc. on win32
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>> import un_package
-    >>> 
-
-#### Linux
-
-Sous Linux, l'utilitaire `pip3` est utilisé:
-
-    $ pip3 install un_package
-    Collecting un_package
-    [...]
-    Successfully installed [...]
+Vous devez écrire le code de la fonction `pal()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte.
 
 
+> Note : ce problème peut être résolu à "bas niveau" en itérant sur les caractères ou à plus "haut niveau" en utilisant les méthodes spécifiques aux chaines de caractères. La deuxième approche, plus *pythonique* est à privilégier.
 
 
+A chaque modification de `pal()`, tester son fonctionnement dans la fonction `main()` en appelant `pal()` pour un argument particulier et en affichant la valeur de retour. Jeter un oeil aux doctests de la fonction pour avoir un exemple d’appel et d’utilisation de la valeur de retour.
+
+Une fois la fonction `pal()` opérationnelle pour un argument, ET SEULEMENT DANS CE CAS, lancer les doctests avec la commande suivante, exécutée dans un terminal:
+
+- Windows : `python -m doctest ex05.py -v`
+- Linux : `python3 -m doctest ex05.py -v`
+
+Une version plus élaborée pourrait traiter le cas des caractères accentués et de la ponctuation.
+
+### Robustesse d'un mot de passe
+
+Ecrire la fonction `check_password()` permettant de tester la robustesse d’un mot de passe. Le mot de passe est considéré comme fort si:
+
+- sa longueur est supérieure ou égale à 10 symboles
+- il a au moins un chiffre
+- il contient au moins une lettre majuscule et une lettre minuscule.
+
+Le mot de passe contient uniquement des lettres latines ASCII ou des chiffres. Une version plus élaborée pourrait imposer la présence d’un signe de ponctuation.
 
 
+## 6 - Les listes
+
+Les exercices d'application ci dessous correspondent au chapitre [Les listes](https://perso.esiee.fr/~courivad/Python/06-listes.html).
+
+Pour ces exercices, vous devez utiliser en priorité le squelette contenu dans le fichier `ex06.py`. En cas de difficulté, le fichier `ex06-easy.py` contient des renseignements supplémentaires.
+
+### Contenu d’un répertoire
+
+Utiliser les modules `os` et `os.path` pour écrire une fonction `scand()` qui prend en argument un nom de répertoire et retourne deux listes de strings :
+
+- l’une contient le nom des fichiers du répertoire passé en argument
+- l’autre le nom des répertoires.
+
+Vous devez écrire le code de la fonction `scand()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte. On s’interessera plus particulièrement aux fonctions `listdir()`, `isfile()`, `isdir()`, et `join()`. Utiliser les “list comprehension” pour une écriture synthétique.
+
+A chaque modification de `scand()`, tester son fonctionnement dans la fonction `main()` en appelant `scand()` pour un argument particulier et en affichant la valeur de retour. Jeter un oeil aux doctests de la fonction pour avoir un exemple d’appel et d’utilisation de la valeur de retour.
+
+Une fois la fonction `scand()` opérationnelle pour un argument, ET SEULEMENT DANS CE CAS, lancer les doctests avec la commande suivante:
+
+- Windows : `python -m doctest ex06.py -v`
+- Linux : `python3 -m doctest ex06.py -v`
+
+### Liste des extensions
+
+Ecrire une fonction `searchext()` qui prend en argument une liste de strings contenant des noms de fichiers (du type de celles renvoyées par `scand()`) et retourne la liste des extensions de ces fichiers. Les extensions peuvent apparaître plusieurs fois dans la liste retournée, et doivent être en minuscules.
+
+### Recherche de langue
+
+Ecrire une fonction `guess_language()` qui prend en argument une string contenant un texte dans une langue (anglais, français, allemand et espagnol) et retourne la langue utilisée sous forme de chaîne de caractères. La détection se base sur l’analyse fréquentielle. La liste des fréquences est fournie dans les variables globales ENGLISH, FRENCH, GERMAN et SPANISH. TRTAB est utilisée dans la méthode `translate()` qui permet de remplacer les caractères accentués par les caractères non accentués correspondant dans la chaîne de caractères sur laquelle elle est appelée.
+
+Pour tester le bon fonctionnement, les chaînes de caractères LCELR, IF, POEMAXX et GOETHE contiennent des textes dans chacune des langues considérées.
+
+### Nombre de Harshad
+
+En mathématiques récréatives, un nombre Harshad est un entier naturel qui est divisible par la somme de ses chiffres dans une base donnée. Ecrire la fonction `is_harshad()` permettant de vérifier si un entier `n` (base 10) passé en paramètre est un nombre de Harshad ou pas. La fonction doit retourner un booléen. Vous écrirez également les doctests associés. Afficher les nombres de Harshad jusqu’à 100.
+
+### Nombre heureux
+
+Un entier naturel est un nombre heureux si, lorsqu’on calcule la somme des carrés de ses chiffres dans son écriture en base 10 puis la somme des carrés des chiffres du nombre obtenu et ainsi de suite, on aboutit au nombre 1. Ecrire la fonction récursive `is_happy()` permettant de vérifier si un entier `n` passé en paramètre est un nombre heureux ou pas. La fonction doit retourner un booléen. Vous écrirez également les doctests associés. Afficher les nombres heureux jusqu’à 100.
+
+
+## 7 - Les tuples
+
+Les exercices d'application ci dessous correspondent au chapitre [Les tuples](https://perso.esiee.fr/~courivad/Python/07-tuples.html).
+
+Pour ces exercices, vous devez utiliser en priorité le squelette contenu dans le fichier `ex07.py`. En cas de difficulté, le fichier `ex07-easy.py` contient des renseignements supplémentaires.
+
+Ecrire la fonction `artcode()` qui prend une chaîne de caractères pour argument, et retourne une liste de tuples. Chaque tuple est composé d’un caractère (et d’un seul) et du nombre d’occurences consécutives de ce caractère. Par exemple, la chaîne `"MMMMaaacXolloMM"` est représentée par la liste `[('M', 4), ('a', 3), ('c', 1), ('X', 1), ('o', 1), ('l', 2), ('o', 1), ('M', 2)]`.
+
+Ecrire la fonction réciproque `artdecode()` qui prend une liste de tuples en argument et retourne la chaîne de caractères correspondante. Cette fonction est la fonction réciproque de `artcode()`.
+
+Construire les chaînes de caractères correspondant aux variables L1 et L2. Vous pouvez trouver des [ASCII art](https://en.wikipedia.org/wiki/ASCII_art) simples sur le site [ASCII art archive](https://www.asciiart.eu/) ou construire les votres à partir d’images et de [ce générateur](https://www.ascii-art-generator.org/).
+
+Lancement des tests:
+
+- Windows : `python -m doctest ex07.py -v`
+- Linux : `python3 -m doctest ex07.py -v`
+
+
+## 8 - Les fichiers
+
+L'exercice d'application ci dessous correspond au chapitre [Les fichiers](https://perso.esiee.fr/~courivad/Python/08-files.html).
+
+Ecrire la fonction `extract_temp()` qui prend en argument une date au format `AAAAMMJJ`, un code de station météo parmi ceux disponibles dans la liste des stations météo (`data/stations-meteo.csv`) et retourne une liste des températures.
+
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex08.py`. En cas de difficulté, le fichier `ex08-easy.py` contient des renseignements supplémentaires. 
+
+Vous devez écrire le code de la fonction `extract_temp()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte.
+
+A chaque modification de `extract_temp()`, tester son fonctionnement dans la fonction `main()` en appelant `extract_temp()` pour un argument particulier et en affichant la valeur de retour.
+
+Une fois la fonction `extract_temp()` opérationnelle pour un argument, ET SEULEMENT DANS CE CAS, lancer les doctests :
+
+- Windows : `python -m doctest ex08.py -v`
+- Linux : `python3 -m doctest ex08.py -v`
+
+Quelques indications:
+
+- le fichier `data/meteofrance2014.zip` contient les observations météorologiques en France pour l’année 2014, et l’explication des variables se trouve [sur ce lien](https://donneespubliques.meteofrance.fr/client/document/doc_parametres_synop_168.pdf).
+- le module `zipfile` permet la manipulation des fichiers compressés. En particulier la méthode `namelist()` permet de lister le contenu de l’archive.
+- lorsqu’on travaille avec une archive, la fonction `csv.reader()` n’est pas disponible. Il faut utiliser la méthode `read()` qui retourne une séquence de bytes.
+- cette séquence de bytes est convertie en `str` avec la méthode `decode()`.
+
+> Note : la liste ne permet pas une performance algorithmique optimale. La structure de données la plus appropriée à ce type de problème est le dictionnaire que nous verrons dans un autre chapitre.
+
+
+## 9 - Les sets
+
+Les exercices d'application ci dessous correspond au chapitre [Les sets](https://perso.esiee.fr/~courivad/Python/09-sets.html).
+
+### Propriété des set
+
+Modifier la seule instruction `return` de la fonction `searchext()` de l’exercice d’application sur les listes pour que la liste des extensions retournée ne contienne chaque extension qu'une et une seule fois.
+
+
+### Les mots de la langue française
+
+Le fichier `data/mots.txt` contient une liste de mots de la langue française. Il s'agit ici d'effectuer des recherches sur cet ensemble de mots.
+
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex09.py`. En cas de difficulté, le fichier `ex09-easy.py` contient des renseignements supplémentaires.
+
+Construire une **liste** de ces mots à partir d'une *list comprehension*. 
+
+Attention, pour un affichage ligne par ligne, les mots contenus dans le fichier sont suivis d'un caractère spécial `\n` qu'il conviendra de retirer. Pour effectuer cette opération, on recherchera une [méthode de chaine de caractère](https://docs.python.org/3.7/library/stdtypes.html#string-methods) adaptée.
+
+A partir de cette liste, rechercher les mots en position 24499, 28281, 57305, 118091, 199316, 223435, 336455. Ca devrait vous faire penser à un célèbre personnage de bande dessinée.
+
+Construire maintenant **l'ensemble** des mots contenus dans le fichier avec un *set comprehension*. Ce ``set()`` va autoriser la recherche avec une grande efficacité algorithmique, ce que ne permet pas la liste. 
+
+Les mots "chronophage", "procrastinateur", "dangerosité", et "gratifiant" sont ils présents dans le fichier ?
+
+Utiliser un *set comprehension* pour produire l'ensemble des mots de 7 lettres. Combien y en a t-il ?
+
+De la même manière rechercher l'ensemble des mots contenant un ``k``. Quelle est sa taille ?
+
+Utiliser les deux ensembles précédents pour compter le nombre de mots de 7 lettres contenant un ``k``.
+
+Rechercher l'ensemble des mots contenant un ``w``. Quelle est sa taille ? Combien y a t-il de mots contenant un ``k`` et un ``w`` ?
+
+Combien y a t-il de mots contenant un ``z`` ? Commençant par un ``z`` ? Terminant par un ``z`` ? Comportant un ``z`` en position non terminale (ne commençant ni ne finissant par ``z``) ?
+
+Combien y a t-il de mots avec un ``z`` en position non terminale, contenant également un ``k`` ?
+
+Combien y a t-il de mots avec un ``z`` en position non terminale, contenant également un ``k`` ?
+
+Aucun doctest n'est fourni. Ecrivez en quelques un. Pour les lancer:
+
+- Windows : `python -m doctest ex09.py -v`
+- Linux : `python3 -m doctest ex09.py -v`
+
+## 10 - Les dictionnaires
+
+L'exercice d'application ci dessous correspond au chapitre [Les dictionnaires](https://perso.esiee.fr/~courivad/Python/10-dict.html).
+
+Le fichier `data/stations-meteo.csv` contient la liste des stations d’observation de Météo France et un certain nombre d’informations s’y rapportant. Ecrire la fonction `build_stations_dict()` prenant en argument le fichier `csv` précédent et retournant un dictionnaire dont la clé est le nom de la station et la valeur un `namedtuple()` contenant l’ID, la latitude, la longitude et l’altitude de la station. Les tuples nommés ont été présentés au chapitre [Les tuples](https://perso.esiee.fr/~courivad/Python/07-tuples.html).
+
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex10.py`. En cas de difficulté, le fichier `ex10-easy.py` contient des renseignements supplémentaires. 
+
+Vous devez écrire le code de la fonction `build_stations_dict()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte.
+
+A chaque modification de `build_stations_dict()`, tester son fonctionnement dans la fonction `main()` en l'appelant avec un argument particulier et en affichant la valeur de retour.
+
+Lancement des tests:
+
+- Windows : `python -m doctest ex10.py -v`
+- Linux : `python3 -m doctest ex10.py -v`
+
+## 11 - Les exceptions
+
+L'exercice d'application ci dessous correspond au chapitre [Les exceptions](https://perso.esiee.fr/~courivad/Python/11-exceptions.html).
+
+### Conversion de type
+
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex11.py`. En cas de difficulté, le fichier `ex11-easy.py` contient des renseignements supplémentaires.
+
+Vous devez mettre en oeuvre le paradigme EAFP pour écrire une fonction `parse()` qui prend en entrée une chaine de caractère et retourne un nombre décimal, un entier ou une chaine de caractère selon son contenu.
+
+Lancement des tests:
+
+- Windows : `python -m doctest ex11.py -v`
+- Linux : `python3 -m doctest ex11.py -v`
+
+## 12 - Les classes
+
+Les exercices d'application ci dessous correspondent au chapitre [Les classes](https://perso.esiee.fr/~courivad/Python/12-classes.html).
+
+### La classe `Point2D`
+
+Créer une classe `Point2D` possédant 2 attributs `x` et `y` (représentant les coordonnées du point dans un espace à 2 dimensions) possédant les caractéristiques suivantes:
+
+- un constructeur avec des paramètres par défaut permettant de créer un point de coordonnées `(0,0)` si aucun paramètre ne lui est passé.
+- une méthode `move()` avec 2 arguments `dx` et `dy` permettant de déplacer le point de telle sorte que ses nouvelles coordonnées soient `(x+dx, y+dy)`. Cette méthode ne retourne rien (`None`)
+- une méthode `distance()` prenant en argument un autre `Point2D` et retournant la distance euclidienne entre le point courant et celui passé en argument. Pour un code optimal, faites appel à la fonction `math.hypot()`.
+
+Redéfinir la méthode `__str__()` pour un affichage pertinent lors de l’appel à `print()`.
+
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex12.py`. En cas de difficulté, le fichier `ex12-easy.py` contient des renseignements supplémentaires. 
+
+A chaque modification de la classe `Point2D`, tester son fonctionnement dans la fonction `main()` en créant une instance particulière et en vérifiant sur cette instance le bon fonctionnement des méthodes.
+
+Lancement des tests:
+
+- Windows : `python -m doctest ex12.py -v`
+- Linux : `python3 -m doctest ex12.py -v`
+
+### La classe `Vector2D`
+
+Créer une classe `Vector2D` possédant 2 attributs `x` et `y` qui représentent les coordonnées du vecteur dans un espace à 2 dimensions. Les arguments du constructeur naturel sont deux points de la classe `Point2D`:
+
+- redéfinir la méthode `__abs__()` pour retourner la norme du vecteur
+- redéfinir la méthode `__str__()` pour un affichage pertinent lors de l’appel à print().
+- redéfinir la méthode `__eq__()` afin que l’opérateur d’égalité `==` puisse fonctionner entre deux vecteurs.
+- redéfinir la méthode `__neg__()` afin que l’opération `-v` retourne l’opposé du vecteur `v`.
+- redéfinir la méthode `__add__()` afin que l’opérateur d’addition `+` de deux vecteurs puisse fonctionner.
+- redéfinir la méthode `__sub__()` afin que l’opérateur de soustraction `-` puisse fonctionner.
+
+Une fois la classe Vector2D opérationnelle pour une instance, vérifier la bonne exécution des doctests.
+
+## 13 - Internet
+
+L'exercice d'application ci dessous correspond au chapitre [Internet](https://perso.esiee.fr/~courivad/Python/13-internet.html).
+
+[IMDb](http://www.imdb.com/chart/top?ref_=nv_ch_250_4) recense la liste des 250 meilleurs films selon les votes de ses adhérents. Utilisez les modules `urllib.request` et `parser` pour récupérer automatiquement cette liste sur le serveur et l’afficher dans l’ordre inverse. Cette liste évolue au fil du temps mais le résultat devrait être proche de ceci:
+
+- 250 : In the Mood for Love
+- 249 : La douceur de vivre
+- 248 : Gangs of Wasseypur
+- 247 : L'ultime razzia
+- 246 : Lagaan
+- ...
+- 5 : 12 hommes en colère
+- 4 : The Dark Knight: Le chevalier noir
+- 3 : Le parrain, 2ème partie
+- 2 : Le parrain
+- 1 : Les évadés
+
+Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex13.py`. En cas de difficulté, le fichier `ex13-easy.py` contient des renseignements supplémentaires. 
+
+Vous devez écrire le code de la classe `MyHTMLParser` (attributs et méthodes) en redéfinissant les méthodes `handle_starttag()`, `handle_endtag()` et `handle_data()` pour mettre en oeuvre une logique de traitement (liée à la structure de la page HTML), qui déclenchera l’ajout de données à un conteneur seulement sur certaines conditions. Le conteneur et les conditions seront des attributs de la classe `MyHTMLParser` (qui hérite de `HTMLParser`).
+
+Ecrire le code de la fonction `scrap_imdb()` qui a pour rôle d’instancier la classe `MyHTMLParser` et d’appeler la méthode `feed()` sur celle ci.
+
+Ecrire le code de la fonction `main()` qui a pour rôle d’appeler la fonction `scrap_imdb()` sur une ressource distante (IMDb). Vous mettrez en oeuvre le traitement d’exception pour traiter élégamment l’éventualité d’une ressource réseau indisponible.
+
+Une fois la fonction main() opérationnelle, lancer les doctests. Le fichier `data/IMDb.html` doit être présent dans le répertoire.
+
+- Windows : `python -m doctest ex13.py -v`
+- Linux : `python3 -m doctest ex13.py -v`
+
+## 15 - Géolocalisation
+
+L'exercice d'application ci dessous correspond au chapitre [Géolocatisation](https://perso.esiee.fr/~courivad/Python/15-geo.html).
+
+La population totale de la commune est une donnée importante mais elle ne reflète pas complètement l’urbanisation du territoire. La densité de population serait une grandeur plus intéressante dans ce cas. La surface de chacune des communes est une donnée qui n'apparait pas dans les datasets utilisés dans le cours.. 
+
+On pourrait imaginer la calculer à partir des coordonnées du polygone correspondant. Mais cette opération est complexe (voir [l'algorithme du lacet](https://en.wikipedia.org/wiki/Shoelace_formula)).
+
+On peut également la rechercher dans une source de données différente. Utiliser ce [dataset](https://public.opendatasoft.com/explore/dataset/correspondance-code-insee-code-postal/table/) pour produire une carte choroplèthe de la densité de population des communes françaises.
