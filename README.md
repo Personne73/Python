@@ -6,7 +6,7 @@ L'environnement d'apprentissage est décrit [ici](https://perso.esiee.fr/~couriv
 
 ## 3 - Contrôle de l'exécution d'un programme
 
-Les exercices d'application ci dessous correspondent au chapitre [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/Python/03-controle.html).
+Les exercices d'application ci dessous correspondent au chapitre [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/python_bases/03-controle.html).
 
 ### Nombres premiers
 
@@ -29,11 +29,11 @@ L’affichage doit ressembler à:
     
 ## 4 - Fonctions et modules
 
-Les exercices d'application ci dessous correspondent au chapitre [Fonctions et modules](https://perso.esiee.fr/~courivad/Python/04-fonctions.html).
+Les exercices d'application ci dessous correspondent au chapitre [Fonctions et modules](https://perso.esiee.fr/~courivad/python_bases/04-fonctions.html).
 
 ### Nombres premiers
 
-Encapsuler dans une fonction booléenne `est_premier()` le code correspondant à l’exercice d’application du chapitre [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/Python/03-controle.html). Ajouter une docstring et des doctest. Vérifier que les tests passent et que la fonction `help()` donne bien le résultat attendu.
+Encapsuler dans une fonction booléenne `est_premier()` le code correspondant à l’exercice d’application du chapitre [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/python_bases/03-controle.html). Ajouter une docstring et des doctest. Vérifier que les tests passent et que la fonction `help()` donne bien le résultat attendu.
 
 Utiliser la fonction `est_premier()` pour rechercher les `n` premiers nombres premiers.
 
@@ -75,7 +75,24 @@ Utilisez cette fonction pour calculer :
 
 ## 5 - Les chaines de caractères
 
-Les exercices d'application ci dessous correspondent au chapitre [Chaines de caractères](https://perso.esiee.fr/~courivad/Python/05-chaines.html).
+Les exercices d'application ci dessous correspondent au chapitre [Chaines de caractères](https://perso.esiee.fr/~courivad/python_bases/05-chaines.html).
+
+### Un peu de récursivité
+
+Selon [Wikipedia](https://fr.wikipedia.org/wiki/Algorithme_r%C3%A9cursif), un algorithme récursif "est un algorithme qui résout un problème en calculant des solutions d'instances plus petites du même problème".
+
+Pour illustrer ce concept, on cherche à réaliser un algorithme qui retire les voyelles d'une chaîne de caractères ASCII (pour garder l'essentiel de la démarche, on ne traite pas ici le cas des lettres accentuées).
+
+Une version itérative de l'algorithme :
+
+	def remove_vowels_it(s):
+		out = ""
+		for c in s:
+			if c in "aeiouy": continue
+			out += c
+		return out
+		
+Ecrire une version récursive de cet algorithme.
 
 ### Palindromes
 
@@ -113,7 +130,7 @@ Le mot de passe contient uniquement des lettres latines ASCII ou des chiffres. U
 
 ## 6 - Les listes
 
-Les exercices d'application ci dessous correspondent au chapitre [Les listes](https://perso.esiee.fr/~courivad/Python/06-listes.html).
+Les exercices d'application ci dessous correspondent au chapitre [Les listes](https://perso.esiee.fr/~courivad/python_bases/06-listes.html).
 
 Pour ces exercices, vous devez utiliser en priorité le squelette contenu dans le fichier `ex06.py`. En cas de difficulté, le fichier `ex06-easy.py` contient des renseignements supplémentaires.
 
@@ -154,7 +171,7 @@ Un entier naturel est un nombre heureux si, lorsqu’on calcule la somme des car
 
 ## 7 - Les tuples
 
-Les exercices d'application ci dessous correspondent au chapitre [Les tuples](https://perso.esiee.fr/~courivad/Python/07-tuples.html).
+Les exercices d'application ci dessous correspondent au chapitre [Les tuples](https://perso.esiee.fr/~courivad/python_bases/07-tuples.html).
 
 Pour ces exercices, vous devez utiliser en priorité le squelette contenu dans le fichier `ex07.py`. En cas de difficulté, le fichier `ex07-easy.py` contient des renseignements supplémentaires.
 
@@ -172,7 +189,7 @@ Lancement des tests:
 
 ## 8 - Les fichiers
 
-L'exercice d'application ci dessous correspond au chapitre [Les fichiers](https://perso.esiee.fr/~courivad/Python/08-files.html).
+L'exercice d'application ci dessous correspond au chapitre [Les fichiers](https://perso.esiee.fr/~courivad/python_bases/08-files.html).
 
 Ecrire la fonction `extract_temp()` qui prend en argument une date au format `AAAAMMJJ`, un code de station météo parmi ceux disponibles dans la liste des stations météo (`data/stations-meteo.csv`) et retourne une liste des températures.
 
@@ -199,7 +216,7 @@ Quelques indications:
 
 ## 9 - Les sets
 
-Les exercices d'application ci dessous correspond au chapitre [Les sets](https://perso.esiee.fr/~courivad/Python/09-sets.html).
+Les exercices d'application ci dessous correspond au chapitre [Les sets](https://perso.esiee.fr/~courivad/python_bases/09-sets.html).
 
 ### Propriété des set
 
@@ -214,7 +231,7 @@ Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le
 
 Construire une **liste** de ces mots à partir d'une *list comprehension*. 
 
-Attention, pour un affichage ligne par ligne, les mots contenus dans le fichier sont suivis d'un caractère spécial `\n` qu'il conviendra de retirer. Pour effectuer cette opération, on recherchera une [méthode de chaine de caractère](https://docs.python.org/3.7/library/stdtypes.html#string-methods) adaptée.
+Attention, pour un affichage ligne par ligne, les mots contenus dans le fichier sont suivis d'un caractère spécial `\n` qu'il conviendra de retirer. Pour effectuer cette opération, on recherchera une [méthode de chaine de caractère](https://docs.python.org/3/library/stdtypes.html#string-methods) adaptée.
 
 A partir de cette liste, rechercher les mots en position 24499, 28281, 57305, 118091, 199316, 223435, 336455. Ca devrait vous faire penser à un célèbre personnage de bande dessinée.
 
@@ -243,9 +260,9 @@ Aucun doctest n'est fourni. Ecrivez en quelques un. Pour les lancer:
 
 ## 10 - Les dictionnaires
 
-L'exercice d'application ci dessous correspond au chapitre [Les dictionnaires](https://perso.esiee.fr/~courivad/Python/10-dict.html).
+L'exercice d'application ci dessous correspond au chapitre [Les dictionnaires](https://perso.esiee.fr/~courivad/python_bases/10-dict.html).
 
-Le fichier `data/stations-meteo.csv` contient la liste des stations d’observation de Météo France et un certain nombre d’informations s’y rapportant. Ecrire la fonction `build_stations_dict()` prenant en argument le fichier `csv` précédent et retournant un dictionnaire dont la clé est le nom de la station et la valeur un `namedtuple()` contenant l’ID, la latitude, la longitude et l’altitude de la station. Les tuples nommés ont été présentés au chapitre [Les tuples](https://perso.esiee.fr/~courivad/Python/07-tuples.html).
+Le fichier `data/stations-meteo.csv` contient la liste des stations d’observation de Météo France et un certain nombre d’informations s’y rapportant. Ecrire la fonction `build_stations_dict()` prenant en argument le fichier `csv` précédent et retournant un dictionnaire dont la clé est le nom de la station et la valeur un `namedtuple()` contenant l’ID, la latitude, la longitude et l’altitude de la station. Les tuples nommés ont été présentés au chapitre [Les tuples](https://perso.esiee.fr/~courivad/python_bases/07-tuples.html).
 
 Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le fichier `ex10.py`. En cas de difficulté, le fichier `ex10-easy.py` contient des renseignements supplémentaires. 
 
@@ -260,7 +277,7 @@ Lancement des tests:
 
 ## 11 - Les exceptions
 
-L'exercice d'application ci dessous correspond au chapitre [Les exceptions](https://perso.esiee.fr/~courivad/Python/11-exceptions.html).
+L'exercice d'application ci dessous correspond au chapitre [Les exceptions](https://perso.esiee.fr/~courivad/python_bases/11-exceptions.html).
 
 ### Conversion de type
 
@@ -275,7 +292,7 @@ Lancement des tests:
 
 ## 12 - Les classes
 
-Les exercices d'application ci dessous correspondent au chapitre [Les classes](https://perso.esiee.fr/~courivad/Python/12-classes.html).
+Les exercices d'application ci dessous correspondent au chapitre [Les classes](https://perso.esiee.fr/~courivad/python_bases/12-classes.html).
 
 ### La classe `Point2D`
 
@@ -311,7 +328,7 @@ Une fois la classe Vector2D opérationnelle pour une instance, vérifier la bonn
 
 ## 13 - Internet
 
-L'exercice d'application ci dessous correspond au chapitre [Internet](https://perso.esiee.fr/~courivad/Python/13-internet.html).
+L'exercice d'application ci dessous correspond au chapitre [Internet](https://perso.esiee.fr/~courivad/python_bases/13-internet.html).
 
 [IMDb](http://www.imdb.com/chart/top?ref_=nv_ch_250_4) recense la liste des 250 meilleurs films selon les votes de ses adhérents. Utilisez les modules `urllib.request` et `parser` pour récupérer automatiquement cette liste sur le serveur et l’afficher dans l’ordre inverse. Cette liste évolue au fil du temps mais le résultat devrait être proche de ceci:
 
@@ -342,7 +359,7 @@ Une fois la fonction main() opérationnelle, lancer les doctests. Le fichier `da
 
 ## 15 - Géolocalisation
 
-L'exercice d'application ci dessous correspond au chapitre [Géolocatisation](https://perso.esiee.fr/~courivad/Python/15-geo.html).
+L'exercice d'application ci dessous correspond au chapitre [Géolocatisation](https://perso.esiee.fr/~courivad/python_bases/15-geo.html).
 
 La population totale de la commune est une donnée importante mais elle ne reflète pas complètement l’urbanisation du territoire. La densité de population serait une grandeur plus intéressante dans ce cas. La surface de chacune des communes est une donnée qui n'apparait pas dans les datasets utilisés dans le cours.. 
 
