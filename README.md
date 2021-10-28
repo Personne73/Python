@@ -10,15 +10,19 @@ Les exercices d'application ci dessous correspondent au chapitre [Contrôle de l
 
 ### Nombres premiers
 
-Les nombres premiers ne sont divisibles que par 1 et eux mêmes. Ecrivez le code permettant d’afficher la vérité de " `p` est un nombre premier ".
+Les nombres premiers ne sont divisibles que par 1 et eux mêmes. Ecrivez le code permettant de vérifier si un entier `p` est un nombre premier ou pas.
 
 Pour rechercher (naïvement) si un nombre `p` est premier:
 
-- POUR chaque diviseur `d` parmi les valeurs `2` et les valeurs impaires inférieures à $`\sqrt{p}`$ (vérifier que ça suffit sur un exemple)
-    - on effectue la division entière de `p` par `d`
-    - SI le reste est nul, ALORS le nombre n’est pas premier et on interrompt le parcours de la boucle en affichant False
+- POUR chaque diviseur `d` potentiel:
+    - si `p` est divisible par `d`, `p` n'est pas premier et on interrompt le parcours de la boucle
 - FIN POUR
-- Sinon, il est premier et on affiche True
+- Sinon, `p` est premier.
+
+> Note : 
+>
+> - la fonction `range(i, j)` produit la séquence des nombres entiers de `i` jusqu'à `j-1` inclus.
+> - on peut limiter le nombre de diviseurs potentiels à ceux qui sont inférieurs à $\sqrt p$
 
 L’affichage doit ressembler à:
 
@@ -92,7 +96,11 @@ Une version itérative de l'algorithme :
 			out += c
 		return out
 		
-Ecrire une version récursive de cet algorithme.
+Ecrire une version récursive de cet algorithme en portant attention :
+
+- au cas de base (qui permet de retourner un résultat sans appel récursif)
+- à ce que la fonction doit retourner si le premier caractère est une voyelle
+- à ce que la fonction doit retourner si le premier caractère est une consonne
 
 ### Palindromes
 
@@ -143,6 +151,11 @@ Utiliser les modules `os` et `os.path` pour écrire une fonction `scand()` qui p
 
 Vous devez écrire le code de la fonction `scand()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte. On s’interessera plus particulièrement aux fonctions `listdir()`, `isfile()`, `isdir()`, et `join()`. Utiliser les “list comprehension” pour une écriture synthétique.
 
+> Note : pour ne pas dépendre du contexte d'exécution, les fonctions `isfile()` et `isdir()` nécessitent le passage d'un chemin absolu. Si le répertoire `/home/user/docs` contient le fichier `letter.txt`, alors:
+>
+> - `letter.txt` est le chemin relatif et n'a de sens que dans le répertoire `/home/user/docs`
+> - `/home/user/docs/letter.txt` est le chemin absolu et a du sens quel que soit le répertoire de travail
+
 A chaque modification de `scand()`, tester son fonctionnement dans la fonction `main()` en appelant `scand()` pour un argument particulier et en affichant la valeur de retour. Jeter un oeil aux doctests de la fonction pour avoir un exemple d’appel et d’utilisation de la valeur de retour.
 
 Une fois la fonction `scand()` opérationnelle pour un argument, ET SEULEMENT DANS CE CAS, lancer les doctests avec la commande suivante:
@@ -176,6 +189,8 @@ Les exercices d'application ci dessous correspondent au chapitre [Les tuples](ht
 Pour ces exercices, vous devez utiliser en priorité le squelette contenu dans le fichier `ex07.py`. En cas de difficulté, le fichier `ex07-easy.py` contient des renseignements supplémentaires.
 
 Ecrire la fonction `artcode()` qui prend une chaîne de caractères pour argument, et retourne une liste de tuples. Chaque tuple est composé d’un caractère (et d’un seul) et du nombre d’occurences consécutives de ce caractère. Par exemple, la chaîne `"MMMMaaacXolloMM"` est représentée par la liste `[('M', 4), ('a', 3), ('c', 1), ('X', 1), ('o', 1), ('l', 2), ('o', 1), ('M', 2)]`.
+
+> Note : Vous trouvez compliqué d'écrire une fonction itérative ? Pensez à un algorithme récursif !
 
 Ecrire la fonction réciproque `artdecode()` qui prend une liste de tuples en argument et retourne la chaîne de caractères correspondante. Cette fonction est la fonction réciproque de `artcode()`.
 
