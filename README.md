@@ -1,8 +1,8 @@
 # Exercices d'application
 
-Vous trouverez ici les exercices d'application permettant de valider les connaissances du [cours Python](https://perso.esiee.fr/~courivad/Python).
+Vous trouverez ici les exercices d'application permettant de valider les connaissances du cours [les bases du langage Python](https://perso.esiee.fr/~courivad/Python/cours/bases.html).
 
-L'environnement d'apprentissage est décrit [ici](https://perso.esiee.fr/~courivad/env.html) et la méthodologie de développement [là](https://perso.esiee.fr/~courivad/meth.html).
+L'environnement d'apprentissage est décrit [ici](https://perso.esiee.fr/~courivad/Python/install/index.html) et la méthodologie de développement [là](https://perso.esiee.fr/~courivad/Python/dev/index.html).
 
 ## 3 - Contrôle de l'exécution d'un programme
 
@@ -27,25 +27,11 @@ L’affichage doit ressembler à:
     $ python ex03.py
     733  : True
     
-### Suites de Syracuse
-
-On peut définir quelques métriques pour les suites de Syracuse:
-
-- le temps de vol : c’est le plus petit indice `k` tel que $`u_{k}=1`$. Il est de `17` pour la suite de Syracuse de source `n = 15` et de `46` pour la suite de Syracuse de source `n = 127`.
-- le temps de vol en altitude : c’est le plus petit indice `k` tel que $`u_{k+1} <= u_{0}`$. Il est de `10` pour la suite de Syracuse de source `n = 15` et de `23` pour la suite de Syracuse de source `n = 127`
-- l’altitude maximale : c’est la valeur maximale de la suite. Elle est de `160` pour la suite de Syracuse de source `n = 15` et de `4372` pour la suite de Syracuse de source `n = 127`.
-
-Ecrivez le code permettant de rechercher:
-
-- l’altitude maximale d’une suite de Syracuse et la valeur maximum de l’altitude maximale des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
-- le temps de vol en altitude d’une suite de Syracuse et la valeur maximum du temps de vol des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
-- le temps de vol en altitude d’une suite de Syracuse et la valeur maximum du temps de vol en altitude des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
-
 ## 4 - Fonctions et modules
 
-L'exercice d'application ci dessous correspond au chapitre [Fonctions et modules](https://perso.esiee.fr/~courivad/Python/04-fonctions.html).
+Les exercices d'application ci dessous correspondent au chapitre [Fonctions et modules](https://perso.esiee.fr/~courivad/Python/04-fonctions.html).
 
-### Encapsulation de code
+### Nombres premiers
 
 Encapsuler dans une fonction booléenne `est_premier()` le code correspondant à l’exercice d’application du chapitre [Contrôle de l’exécution d’un programme](https://perso.esiee.fr/~courivad/Python/03-controle.html). Ajouter une docstring et des doctest. Vérifier que les tests passent et que la fonction `help()` donne bien le résultat attendu.
 
@@ -60,6 +46,32 @@ Utiliser la fonction `est_premier()` pour rechercher:
 - le premier couple de nombres premiers jumeaux après un entier `n` donné (`p` et `p'` sont des nombres premiers jumeaux si `p` et `p'` sont premiers et si `p'-p = 2`). Quel est le premier couple de nombres premiers jumeaux après `n = 100000` ?
 - le premier nombre premier de Germain après un entier `n` donné (un entier `p` est un nombre premier de Germain si `p` et `2p+1` sont premiers). Quel est le premier nombre premier de Germain après `n = 100000` ?
 
+### Suites de Syracuse
+
+On appelle [suite de Syracuse](https://fr.wikipedia.org/wiki/Conjecture_de_Syracuse) une suite d'entiers naturels définie de la manière suivante : on part d'un nombre entier strictement positif ; s’il est pair, on le divise par 2 ; s’il est impair, on le multiplie par 3 et on ajoute 1. En répétant l’opération, on obtient une suite d'entiers strictement positifs dont chacun ne dépend que de son prédécesseur.
+
+Ecrivez une fonction `syracuse()` prenant en paramètre un entier `n` et retournant les 3 caractéristiques suivantes:
+
+- le temps de vol : c’est le plus petit indice $k$ tel que $u_{k}=1$. Il est de `17` pour la suite de Syracuse de source `n = 15` et de `46` pour la suite de Syracuse de source `n = 127`.
+- le temps de vol en altitude : c’est le plus petit indice $k$ tel que $u_{k+1} <= u_{0}$. Il est de `10` pour la suite de Syracuse de source `n = 15` et de `23` pour la suite de Syracuse de source `n = 127`
+- l’altitude maximale : c’est la valeur maximale de la suite. Elle est de `160` pour la suite de Syracuse de source `n = 15` et de `4372` pour la suite de Syracuse de source `n = 127`.
+
+> Python permet de retourner plusieurs valeurs simultanément.
+> 
+> - la définition de la fonction :
+> 
+>         def square_and_cube(n):
+>             return n**2, n**3
+> 
+> - son appel :
+> 
+>         x, y = square_and_cube(3)
+
+Utilisez cette fonction pour calculer :
+
+- la valeur maximum de l’altitude maximale des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
+- la valeur maximum du temps de vol des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
+- la valeur maximum du temps de vol en altitude des suites de Syracuse pour `n = 1` jusqu’à `n = 9999`.
 
 ## 5 - Les chaines de caractères
 
@@ -74,7 +86,7 @@ Pour cet exercice, vous devez utiliser en priorité le squelette contenu dans le
 Vous devez écrire le code de la fonction `pal()` en utilisant éventuellement des `print()` intermédiaires pour observer les valeurs des variables au cours de l’exécution. Ces `print()` devront être retirés lorsque la fonction sera correcte.
 
 
-> Note : ce problème peut être résolu à "bas niveau" en itérant sur les caractères ou à plus "haut niveau" en utilisant les méthodes spécifiques aux chaines de caractères. La deuxième approche, plus *pythonique* est à privilégier.
+> Note : ce problème peut être résolu à "bas niveau" en itérant sur les caractères ou à plus "haut niveau" en utilisant les [méthodes de chaines de caractères](https://docs.python.org/3/library/stdtypes.html#string-methods). La deuxième approche, plus *pythonique* est à privilégier.
 
 
 A chaque modification de `pal()`, tester son fonctionnement dans la fonction `main()` en appelant `pal()` pour un argument particulier et en affichant la valeur de retour. Jeter un oeil aux doctests de la fonction pour avoir un exemple d’appel et d’utilisation de la valeur de retour.
@@ -95,6 +107,8 @@ Ecrire la fonction `check_password()` permettant de tester la robustesse d’un 
 - il contient au moins une lettre majuscule et une lettre minuscule.
 
 Le mot de passe contient uniquement des lettres latines ASCII ou des chiffres. Une version plus élaborée pourrait imposer la présence d’un signe de ponctuation.
+
+> Python dispose de [méthodes de chaines de caractères](https://docs.python.org/3/library/stdtypes.html#string-methods) qui peuvent être utiles : `islower()`, `isupper()`, `isdigit()`, ...
 
 
 ## 6 - Les listes
