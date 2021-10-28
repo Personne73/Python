@@ -22,7 +22,7 @@ Pour rechercher (naïvement) si un nombre `p` est premier:
 > Note : 
 >
 > - la fonction `range(i, j)` produit la séquence des nombres entiers de `i` jusqu'à `j-1` inclus.
-> - on peut limiter le nombre de diviseurs potentiels à ceux qui sont inférieurs à $\sqrt p$
+> - on peut limiter le nombre de diviseurs potentiels à ceux qui sont inférieurs à $`\sqrt p`$
 
 L’affichage doit ressembler à:
 
@@ -56,8 +56,8 @@ On appelle [suite de Syracuse](https://fr.wikipedia.org/wiki/Conjecture_de_Syrac
 
 Ecrivez une fonction `syracuse()` prenant en paramètre un entier `n` et retournant les 3 caractéristiques suivantes:
 
-- le temps de vol : c’est le plus petit indice $k$ tel que $u_{k}=1$. Il est de `17` pour la suite de Syracuse de source `n = 15` et de `46` pour la suite de Syracuse de source `n = 127`.
-- le temps de vol en altitude : c’est le plus petit indice $k$ tel que $u_{k+1} <= u_{0}$. Il est de `10` pour la suite de Syracuse de source `n = 15` et de `23` pour la suite de Syracuse de source `n = 127`
+- le temps de vol : c’est le plus petit indice $`k`$ tel que $`u_{k}=1`$. Il est de `17` pour la suite de Syracuse de source `n = 15` et de `46` pour la suite de Syracuse de source `n = 127`.
+- le temps de vol en altitude : c’est le plus petit indice $`k`$ tel que $`u_{k+1} <= u_{0}`$. Il est de `10` pour la suite de Syracuse de source `n = 15` et de `23` pour la suite de Syracuse de source `n = 127`
 - l’altitude maximale : c’est la valeur maximale de la suite. Elle est de `160` pour la suite de Syracuse de source `n = 15` et de `4372` pour la suite de Syracuse de source `n = 127`.
 
 > Python permet de retourner plusieurs valeurs simultanément.
