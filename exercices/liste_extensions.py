@@ -42,9 +42,7 @@ def searchext(l):
     # on parcourt chaque élément de la liste l et on ajoute dans la liste ext l'extension (case à l'indice 1)
     # si la chaine contenant l'extention n'est pas vide (nom sans extensions donc retourne une string vide)
 
-    ext = [os.path.splitext(file)[1].replace('.', '').lower() for file in l if os.path.splitext(file)[1]]
-    # e = []
-    return ext
+    return [os.path.splitext(file)[1].replace('.', '').lower() for file in l if os.path.splitext(file)[1]]
 
 
 def main():
