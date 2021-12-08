@@ -36,7 +36,11 @@ def extract_temp(date, code):
     filename = "synop." + date[:-2] + ".csv"
 
     # on ouvre l'archive
+    # version pour pc portable :
     myzip = ZipFile('C:/Users/treso/Documents/EsieeParis/E2/Cours/Python/data/meteofrance2014.zip')
+
+    # version pour Zéphyr
+    # myzip = ZipFile('D:/Documents/EsieeParis/E2/Cours/Python/data/meteofrance2014.zip')
 
     # on retourne une liste vide si le fichier n'est pas dans l'archive
     if filename not in myzip.namelist():
