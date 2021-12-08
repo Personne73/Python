@@ -30,14 +30,35 @@ def extract_temp(date, code):
     []
     """
 
-    # votre code ici...
+    temp = []
 
-    return []
+    # construction du nom du fichier csv à ouvrir à partir du paramètre 'date'
+    filename = "synop." + date[:-2] + ".csv"
+
+    # on ouvre l'archive
+    myzip = ZipFile('C:/Users/treso/Documents/EsieeParis/E2/Cours/Python/data/meteofrance2014.zip')
+
+    # on retourne une liste vide si le fichier n'est pas dans l'archive
+    if filename not in myzip.namelist():
+        return []
+
+    # je lis le contenu du fichier avec la notation internationnale
+    data = myzip.read(filename).decode('utf8')
+
+    data = data.split("\n")  # on split pour creer une liste des lignes du fichier
+
+    # on a besoin des collones 0, 1 et 7 pour le code station, la date et la température
+    for line in data[1:]: # pas besoin de parcourir la premier ligne
+        line = line.split(";")  # on split les ';' pour transformer chaque ligne en liste
+        if code == line[0] and date == line[1][:8]:  # pour avoir les 8 premier caractere de la date
+            temp.append(round(float(line[7]) - 273.15, 2))  # on converti la température de Kelvin a °C
+            # round pour arrondir les chiffres a virgule
+
+    return temp
 
 
 def main():
-
-    return None
+    print(extract_temp('20140109', '07005'))
 
 
 if __name__ == '__main__':
