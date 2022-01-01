@@ -23,5 +23,7 @@ def build_stations_dict(csvfile):
     # votre code ici...
     return {}
 
+
 if __name__ == '__main__':
     # votre code de test ici...
+    print("Rien")

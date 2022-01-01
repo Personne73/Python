@@ -26,3 +26,4 @@ def build_stations_dict(csvfile):
 
 if __name__ == '__main__':
     # votre code de test ici...
+    print("Hello World")
