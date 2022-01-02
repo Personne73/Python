@@ -36,9 +36,11 @@ def build_stations_dict(csvfile):
 
         # pour chaque ligne de mon csv
         for line in reader:
-            print(line)
+            if line[2] == "Latitude":
+                continue
+            # print(line)
             # j'ajoute dans mon dictionnaire la clé (nom de la station) et la valeur (namedtuple)
-            d[line[1]] = Station(line[0], line[2], line[3], line[4])
+            d[line[1]] = Station(line[0], float(line[2]), float(line[3]), int(line[4]))
 
     return d
 
