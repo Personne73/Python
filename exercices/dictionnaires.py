@@ -47,4 +47,10 @@ def build_stations_dict(csvfile):
 
 if __name__ == '__main__':
     d = build_stations_dict('D:/Documents/EsieeParis/E2/Cours/Python/data/stations-meteo.csv')
+    print(d['NICE'])
     print(d['BELLE ILE-LE TALUT'])
+    print(d['CAYENNE-MATOURY'])
+    print(d['NICE'].ID)
+    print(d['NICE'].Latitude)
+    print(d['NICE'].Longitude)
+    print(d['NICE'].Altitude)
