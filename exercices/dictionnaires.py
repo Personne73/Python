@@ -1,4 +1,7 @@
-# vos import ici...
+import csv
+import json
+from collections import namedtuple
+
 
 def build_stations_dict(csvfile):
     """
@@ -10,7 +13,7 @@ def build_stations_dict(csvfile):
     Returns:
         dictionnaire de namedtuple des informations relatives aux stations météo
 
-    >>> d = build_stations_dict('stations-meteo.csv')
+    >>> d = build_stations_dict('D:/Documents/EsieeParis/E2/Cours/Python/data/stations-meteo.csv')
     >>> print(d['NICE'])
     Station(ID='07690', Latitude=43.648833, Longitude=7.209, Altitude=2)
     >>> print(d['BELLE ILE-LE TALUT'])
@@ -20,10 +23,26 @@ def build_stations_dict(csvfile):
     >>> print(d['NICE'].Latitude)
     43.648833
     """
-    # votre code ici...
-    return {}
+    # Création d'un dictionnaire vide pour stocker nos infos
+    d = dict()
+
+    # création du namedtuple qui sera utilisé comme valeur du dictionnaire
+    Station = namedtuple('Station', ['ID', 'Latitude', 'Longitude', 'Altitude'])
+
+    # ouverture de mon fichier csv
+    with open(csvfile, 'r') as file:
+        # lecture du contenu de mon fichier donc de mon csv
+        reader = csv.reader(file, delimiter=';')
+
+        # pour chaque ligne de mon csv
+        for line in reader:
+            print(line)
+            # j'ajoute dans mon dictionnaire la clé (nom de la station) et la valeur (namedtuple)
+            d[line[1]] = Station(line[0], line[2], line[3], line[4])
+
+    return d
 
 
 if __name__ == '__main__':
-    # votre code de test ici...
-    print("Hello World")
+    d = build_stations_dict('D:/Documents/EsieeParis/E2/Cours/Python/data/stations-meteo.csv')
+    print(d['BELLE ILE-LE TALUT'])
