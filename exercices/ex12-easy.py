@@ -78,6 +78,7 @@ class Vector2D(object):
     """
     # attributs et méthodes ici...
     def __init__(self, p1, p2):
+        print()
         # p1 et p2 sont des Point2D
         # un attribut pour la coordonnée x du vecteur
         # un attribut pour la coordonnée y du vecteur
@@ -109,10 +110,12 @@ class Vector2D(object):
         # l'argument other est aussi un Vector2D
         # retourner un Vector2D en utilisant __neg__
         return None
-        
+
+
 def main():
     # votre code de test ici...
     pass
+
 
 if __name__ == "__main__":
         main()
