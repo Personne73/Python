@@ -1,4 +1,6 @@
 # vos import ici
+import math
+
 
 class Point2D(object):
     """
@@ -21,8 +23,20 @@ class Point2D(object):
     >>> print(p1.distance(p2))
     6.4031242374328485
     """
-    # attributs et méthodes ici...
-    pass
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def move(self, dx=0, dy=0):
+        self.x += dx
+        self.y += dy
+        return None
+
+    def distance(self, point):
+        return math.hypot((self.x - point.x), (self.y - point.y))
+
+    def __str__(self):
+        return "Point2D({0},{1})".format(self.x, self.y)  # f"Point2D({self.x},{self.y})"
 
 
 class Vector2D(object):
