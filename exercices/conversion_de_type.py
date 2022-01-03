@@ -36,14 +36,20 @@ def parse(value):
     '3x2'
     """
 
-    # votre code ici...
+    try:
+        x = int(value)
+    except ValueError:
+        try:
+            x = float(value)
+        except ValueError:
+            x = value
 
-    return None
+    return x
 
 
 def main():
     # votre code de test ici...
-    l = [ parse(value) for value in DATA]
+    l = [parse(value) for value in DATA]
     print(l)
 
 
