@@ -1,4 +1,3 @@
-# vos import ici
 import math
 
 
@@ -36,7 +35,7 @@ class Point2D(object):
         return math.hypot((self.x - point.x), (self.y - point.y))
 
     def __str__(self):
-        return "Point2D({0},{1})".format(self.x, self.y)  # f"Point2D({self.x},{self.y})"
+        return f"Point2D({self.x},{self.y})"
 
 
 class Vector2D(object):
@@ -70,8 +69,27 @@ class Vector2D(object):
     >>> print(v1+v3 == v2)
     True
     """
-    # attributs et méthodes ici...
-    pass
+    def __int__(self, point1, point2):
+        self.x = point2.x - point1.x
+        self.y = point2.y - point2.y
+
+    def __abs__(self):
+        return math.hypot(self.x, self.y)
+
+    def __str__(self):
+        return "Vector2D({0},{1})".format(self.x, self.y)
+
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
+    def __neg__(self):
+        return Vector2D(Point2D(0, 0), Point2D(-self.x, -self.y))
+
+    def __add__(self, other):
+        return Vector2D(Point2D(0, 0), Point2D(self.x + other.x, self.y + other.y))
+
+    def __sub__(self, other):
+        return Vector2D(Point2D(0, 0), Point2D(self.x - other.x, self.y - other.y))
 
 
 def main():
