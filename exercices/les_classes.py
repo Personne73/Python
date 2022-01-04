@@ -69,9 +69,9 @@ class Vector2D(object):
     >>> print(v1+v3 == v2)
     True
     """
-    def __int__(self, point1, point2):
+    def __init__(self, point1, point2):
         self.x = point2.x - point1.x
-        self.y = point2.y - point2.y
+        self.y = point2.y - point1.y
 
     def __abs__(self):
         return math.hypot(self.x, self.y)
