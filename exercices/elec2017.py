@@ -388,13 +388,12 @@ def build_city_dict(row, candidats):
     row = row.split(";")
     d["Ville"] = row[3]
     d["Code"] = build_insee_code(row[0], row[2])
-    d["Inscrits"] = row[4]
-    d["Abstensions"] = row[5]
-    d["Votants"] = row[7]
-    d["Blancs"] = row[9]
-    d["Nuls"] = row[12]
-    d["Exprimés"] = row[15]
-
+    d["Inscrits"] = int(row[4])
+    d["Abstensions"] = int(row[5])
+    d["Votants"] = int(row[7])
+    d["Blancs"] = int(row[9])
+    d["Nuls"] = int(row[12])
+    d["Exprimés"] = int(row[15])
 
     return d
 
