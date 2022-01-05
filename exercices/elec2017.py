@@ -1,5 +1,8 @@
 FILENAME = "presidentielle2017.csv"
 
+import csv
+
+
 def read_file(filename):
     """
     Retourne le contenu de filename
@@ -70,6 +73,11 @@ def read_file(filename):
     """
     l = []
     # votre code ici
+    with open(filename, 'r', encoding='utf8') as file:
+        reader = file.readlines()
+
+        for line in reader:
+            l.append(line)
 
     return l
 
@@ -115,6 +123,18 @@ def parse_header(data):
     """
     indices = []
     # votre code ici
+
+    list_colum = data[1].split(";")
+
+    i = 20
+    indices.append(20)
+
+    while 1:
+        i += 7
+        if i <= len(list_colum):
+            indices.append(i)
+        else:
+            break
 
     return indices
 
@@ -172,6 +192,17 @@ def build_candidates_list(data, indices):
     """
     candidats = []
     # votre code ici
+    list_colum = data[1].split(";")
+    list_name = []
+
+    for indice in indices:
+        list_name.append(list_colum[indice])
+
+    list_name.sort()
+
+    for elt in list_name:
+        word = elt.title()
+        candidats.append(word)
 
     return candidats
 
@@ -218,7 +249,28 @@ def build_insee_code(dpt_code, city_code):
     """
     res = ""
     # votre code ici
+    if not isinstance(dpt_code, str) or not isinstance(city_code, str):
+        return
 
+    if isinstance(dpt_code, str):
+        dpt_code = str(dpt_code)
+        if len(dpt_code) == 1:
+            res = '0' + dpt_code
+        else:
+            res = dpt_code
+
+    res2 = ""
+    if isinstance(city_code, str):
+        city_code = str(city_code)
+
+        if len(city_code) == 1:
+            res2 = '00' + city_code
+        elif len(city_code) == 2:
+            res2 = '0' + city_code
+        elif len(city_code) == 3:
+            res2 = city_code
+
+    res += res2
     return res
 
 
@@ -265,6 +317,9 @@ def get_cities(data):
     """
     cities = []
     # votre code ici
+    for line in data[1:]:
+        line = line.split(";")
+        cities.append( (line[3], build_insee_code(line[0], line[2]) ) )
 
     return cities
 
@@ -330,6 +385,16 @@ def build_city_dict(row, candidats):
     """
     d = dict()
     # votre code ici
+    row = row.split(";")
+    d["Ville"] = row[3]
+    d["Code"] = build_insee_code(row[0], row[2])
+    d["Inscrits"] = row[4]
+    d["Abstensions"] = row[5]
+    d["Votants"] = row[7]
+    d["Blancs"] = row[9]
+    d["Nuls"] = row[12]
+    d["Exprimés"] = row[15]
+
 
     return d
 
@@ -511,13 +576,23 @@ class Votes():
     Mélenchon 22.25
     Fillon 15.79
     """
-    pass   
+    pass
     # votre code ici
 
 
 def main():
     pass
     # votre code ici
+    data = read_file(FILENAME)
+    # print(data[674][359:376])
+    indices = parse_header(data)
+    # print(indices)
+    candidats = build_candidates_list(data, indices)
+    build_insee_code(4, 70)
+    cities = get_cities(data)
+    row = "1;Ain;2;L'Abergement-de-Varey;209;25;11,96;184;88,04;6;2,87;3,26;2;0,96;1,09;176;84,21;95,65;2;F;LE PEN;Marine;48;22,97;27,27;3;M;MACRON;Emmanuel;37;17,7;21,02;11;M;FILLON;François;34;16,27;19,32;9;M;MÉLENCHON;Jean-Luc;33;15,79;18,75;4;M;HAMON;Benoît;13;6,22;7,39;1;M;DUPONT-AIGNAN;Nicolas;6;2,87;3,41;5;F;ARTHAUD;Nathalie;2;0,96;1,14;6;M;POUTOU;Philippe;2;0,96;1,14;10;M;ASSELINEAU;François;1;0,48;0,57;7;M;CHEMINADE;Jacques;0;0;0;8;M;LASSALLE;Jean;0;0;0"
+    d = build_city_dict(row, candidats)
+    print(d)
 
 
 if __name__ == "__main__":
