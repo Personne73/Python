@@ -64,7 +64,11 @@ def read_data(filename):
     """
     l = []
 
-    # Your code here... use csv.DictReader()
+    with open(filename, 'r') as file:
+        reader = csv.DictReader(file, delimiter=";")
+
+        for line in reader:
+            l.append(line)
 
     return l
 
@@ -248,7 +252,21 @@ def get_result(game_data):
     """
     result = defaultdict(dict)  # returned data structure will be a dict of dict
 
-    # Your code here...
+    home_team = game_data['HomeTeam']
+    away_team = game_data['AwayTeam']
+
+    result[home_team] = {"Played": 1, "Home": "H", "Won": int(game_data["FTR"] == 'H'),
+                         "Drawn": int(game_data["FTR"] == 'D'), "Lost": int(game_data["FTR"] == 'A'),
+                         "FTGF": int(game_data["FTHG"]), "FTGA": int(game_data["FTAG"]), "HTGF": int(game_data["HTHG"]),
+                         "HTGA": int(game_data["HTAG"]), "S": int(game_data["HS"]), "ST": int(game_data["HST"]), "C": int(game_data["HC"]),
+                         "F": int(game_data["HF"]), "Y": int(game_data["HY"]), "R": int(game_data["HR"])}
+
+    result[away_team] = {"Played": 1, "Home": "A", "Won": int(game_data["FTR"] == 'A'),
+                         "Drawn": int(game_data["FTR"] == 'D'), "Lost": int(game_data["FTR"] == 'H'),
+                         "FTGF": int(game_data["FTAG"]), "FTGA": int(game_data["FTHG"]), "HTGF": int(game_data["HTAG"]),
+                         "HTGA": int(game_data["HTHG"]), "S": int(game_data["AS"]), "ST": int(game_data["AST"]),
+                         "C": int(game_data["AC"]),
+                         "F": int(game_data["AF"]), "Y": int(game_data["AY"]), "R": int(game_data["AR"])}
 
     # 1. Initialise ``home_team`` and ``away_team`` from ``game_data``
     # 2. Set the ``Played`` stat for each team within a loop
@@ -581,10 +599,13 @@ def compute_final_table(sum_data):
 
 
 def main():
+    raw_data = read_data(FILENAME)
+    get_result(raw_data[0])
     pass
 
 
 if __name__ == '__main__':
+    main()
     DOCTESTS = False
     if not DOCTESTS: main()
 
@@ -592,3 +613,4 @@ if __name__ == '__main__':
     if DOCTESTS:
         for f in functions:
             doctest.run_docstring_examples(f, globals(), name=f.__name__)
+
