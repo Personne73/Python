@@ -43,9 +43,12 @@ def read_file(filename):
     >>> d['Geo point']
     '48.82884091038866,2.349764627345979'
     """
-    # Votre code ici
-    
-    return None
+    with open(filename, 'r', encoding="utf8") as file:
+        reader = csv.DictReader(file, delimiter=";")
+
+        reader_list = list(reader)
+
+    return reader_list
 
 
 def get_data_keys(data):
@@ -76,7 +79,7 @@ def get_data_keys(data):
     """
     # Votre code ici
 
-    return None
+    return [key for key in data[1].keys()]
 
 
 def get_trees_filtered_by_size(data, criteria, operator, value):
@@ -179,7 +182,28 @@ def get_trees_filtered_by_size(data, criteria, operator, value):
     '48.84758185002834,2.25327790355166'
     """
     # Votre code ici
-    return None
+    l = []
+
+    if criteria == "CIRCONFERENCE EN CM" or criteria == "HAUTEUR EN M":
+
+        for line in data:
+            if operator == ">":
+                if float(line[criteria]) > value:
+                    l.append(line)
+            if operator == ">=":
+                if float(line[criteria]) >= value:
+                    l.append(line)
+            if operator == "<":
+                if float(line[criteria]) < value:
+                    l.append(line)
+            if operator == "<=":
+                if float(line[criteria]) <= value:
+                    l.append(line)
+            if operator == "=":
+                if float(line[criteria]) == value:
+                    l.append(line)
+
+    return l
 
 
 def get_trees_filtered_by_string(data, criteria, value):
@@ -225,7 +249,15 @@ def get_trees_filtered_by_string(data, criteria, value):
     '48.831999798675646,2.325830070246111'
     """
     # Votre code ici
-    return None
+    l = []
+
+    if criteria != "CIRCONFERENCE EN CM" or criteria != "HAUTEUR EN M":
+
+        for line in data:
+            if line[criteria] == value:
+                l.append(line)
+
+    return l
 
 
 def get_short_description(tree):
@@ -278,7 +310,11 @@ def get_short_description(tree):
 
     """
     # Votre code ici
-    return None
+    res = "{:<25}".format(tree["LIBELLEFRANCAIS"]) + "{:<20}".format(tree["ARRONDISSEMENT"]) + "h(m) = {:<10}".format(tree["HAUTEUR EN M"]) \
+          + "d(cm) = {:<10}".format(tree["CIRCONFERENCE EN CM"]) + "lat = {:<10}".format(round(float(tree["Geo point"].split(",")[0]), 4)) \
+          + "lon = {:<10}".format(round(float(tree["Geo point"].split(",")[1]), 4))
+
+    return res
 
 
 def fmc(data):
@@ -310,17 +346,34 @@ def fmc(data):
 def main():
     # Votre code de test ici
     pass
-    # data = read_file(FILENAME)
+    data = read_file(FILENAME)
     # print(data)
-    # keys = get_data_keys(data)
-    # print(keys)
-    # f = get_trees_filtered_by_size(data, 'CIRCONFERENCE EN CM', '>', 600)
+    keys = get_data_keys(data)
+    f = get_trees_filtered_by_size(data, 'CIRCONFERENCE EN CM', '>', 600)
+    # print(f[0]['LIBELLEFRANCAIS'])
+    f = get_trees_filtered_by_string(data, 'ARRONDISSEMENT', 'PARIS 7E ARRDT')
     # print(f)
-    # f = get_trees_filtered_by_string(data, 'ARRONDISSEMENT', 'PARIS 7E ARRDT')
-    # print(f)
-    # tree = data[0]
-    # s = get_short_description(tree)
-    # print(s)
+    tree = {'IDBASE': '2002353.0', \
+            'LIBELLEFRANCAIS': 'Araucaria', \
+            'GENRE': 'Araucaria', \
+            'ESPECE': 'araucana', \
+            'ADRESSE': 'PARC DE BAGATELLE - ALLEE DE LONGCHAMP / ROUTE DE SEVRES A NEUILLY', \
+            'TYPEEMPLACEMENT': 'Arbre', \
+            'DOMANIALITE': 'Jardin', \
+            'ARRONDISSEMENT': 'BOIS DE BOULOGNE', \
+            'COMPLEMENTADRESSE': '16-23', \
+            'NUMERO': '', \
+            'IDEMPLACEMENT': '000701003', \
+            'CIRCONFERENCE EN CM': '182.0', \
+            'HAUTEUR EN M': '11.0', \
+            'STADEDEVELOPPEMENT': 'Adulte', \
+            'PEPINIERE': 'Inconnue', \
+            'VARIETE OU CULTIVAR': '', \
+            'DATEPLANTATION': '1907-01-01T01:09:21+01:00', \
+            'REMARQUABLE': 'OUI', \
+            'Geo point': '48.871681148770165,2.249232652751458'}
+    s = get_short_description(tree)
+    print(s)
     # r = fmc(data)
     # print(r)
 
