@@ -1,6 +1,5 @@
 FILENAME = "presidentielle2017.csv"
 
-import csv
 
 
 def read_file(filename):
@@ -394,6 +393,11 @@ def build_city_dict(row, candidats):
     d["Blancs"] = int(row[9])
     d["Nuls"] = int(row[12])
     d["Exprimés"] = int(row[15])
+
+    for elt in candidats:
+        for j in row:
+            if elt == j.title():
+                d[elt] = int(row[row.index(j)+2])
 
     return d
 
