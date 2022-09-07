@@ -58,7 +58,10 @@ def read_file(filename):
     """
     l = []
     # votre code ici
-        
+    with open(filename, 'r', encoding="utf-8") as file:
+        reader = csv.DictReader(file, delimiter=";")
+        l = list(reader)
+
     return l
 
 
@@ -114,8 +117,17 @@ def build_list_departements(data):
     """
     # votre code ici
     l = []
-    return l 
-    
+    for line in data:
+        l.append(line["Nom Officiel Département"])
+
+    l = set(l)
+    l.remove("")
+    l = list(l)
+    l.sort()
+
+    return l
+
+
 def build_list_communes(data):
     """retourne la liste des tuples (code, commune)
 
@@ -164,7 +176,16 @@ def build_list_communes(data):
     """
     # votre code ici
     l = []
+    for line in data:
+        if line["Nom Officiel Commune / Arrondissement Municipal"] != "":
+            l.append((line["Code Officiel Commune / Arrondissement Municipal"], line["Nom Officiel Commune / Arrondissement Municipal"]))
+
+    l = set(l)
+    l = list(l)
+    l.sort()
+
     return l
+
 
 def get_pop_commune(data, commune, annee):
     """retourne la population totale d'une commune
@@ -214,7 +235,10 @@ def get_pop_commune(data, commune, annee):
     
     """
     pop = None
-    
+    commune_list= build_list_communes(data)
+    if commune not in commune_list:
+        return
+
     return pop
 
 def build_dict_departements(lc, sd):
@@ -242,9 +266,9 @@ def build_dict_departements(lc, sd):
     [261, 318095]
     """
     # votre code ici
-    
+
     return dict()
-    
+
 def stat_by_dpt(dd, dpt):
     """
     dd : le dictionnaire retourné par build_dict_departements()
@@ -275,23 +299,23 @@ def stat_by_dpt(dd, dpt):
     """
     # votre code ici
     l = []
-    
+
     return l
 
 def main():
     # votre code de test ici
     # le code ci dessous est exécuté avec la commande :
     #   python communes.py
-    pass
-    # data = read_file(FILENAME)
+    # pass
+    data = read_file(FILENAME)
     # print(data[:10])
-    # l = build_list_departements(data)
+    l = build_list_departements(data)
     # print(l)
-    # c = build_list_communes(data)
-    # print(c[::2000])
+    c = build_list_communes(data)
+    print(c[::2000])
     # p = get_pop_commune(data, 'Chaumergy', 2018)
     # print(p)
-    
+
 # Ne pas modifier le code ci-dessous
 if __name__ == '__main__':
     dt = False
